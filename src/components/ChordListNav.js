@@ -63,7 +63,7 @@ const chordTypes = [
     label: "Power chord",
   },
   {
-    value: "Major",
+    value: "",
     label: "Major",
   },
   {
@@ -191,9 +191,6 @@ const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1),
   },
-  // input: {
-  //   display: "none",
-  // },
 }))
 
 export default function OutlinedInputAdornments(props) {
@@ -210,7 +207,7 @@ export default function OutlinedInputAdornments(props) {
   // const chordTypes = chord.names()
   let inputChord = `${values.notes}${values.chordTypes}`
   const sendData = () => {
-    props.parentCallback(inputChord)
+    props.currentChord(inputChord)
   }
 
   return (

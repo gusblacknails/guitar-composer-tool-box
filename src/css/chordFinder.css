@@ -2,3 +2,25 @@
   width: 1em;
   height: 1em;
 } */
+.chord caption {
+  margin: 4px 0 0 0;
+  background-color: #3f51b5;
+}
+.chordBasic {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-right: 1em;
+}
+.titles {
+  font-family: sans-serif;
+  font-weight: 300;
+}
+.chordsBox {
+  padding-left: 0.5em;
+}
+.filteredChords {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

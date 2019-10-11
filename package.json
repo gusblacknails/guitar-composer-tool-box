@@ -17,6 +17,7 @@
     "gatsby-source-filesystem": "^2.1.29",
     "gatsby-transformer-sharp": "^2.2.20",
     "html-to-react": "^1.4.2",
+    "nouislider-react": "^3.3.4",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-chord-generator": "^0.1.0",
