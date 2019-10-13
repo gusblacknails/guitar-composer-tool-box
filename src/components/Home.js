@@ -3,13 +3,14 @@ import OutlinedInputAdornments from "./ChordListNav"
 import ChordFinder from "./ChordFinder"
 import FilterbyFret from "./FilterbyFret"
 import Nouislider from "nouislider-react"
+import ScaleRender from "./ScaleRender"
 import "nouislider/distribute/nouislider.css"
+import "../css/home.css"
 
 export default class Home extends React.Component {
   constructor() {
     super()
     this.state = {
-      data: "",
       currentChord: "",
       currentMaxFret: 12,
       currentMinFret: 0,
@@ -20,7 +21,6 @@ export default class Home extends React.Component {
   }
 
   onChangeSlide(data) {
-    console.log(data) // logs the value
     this.setState({
       currentMaxFret: Math.round(data[1]),
       currentMinFret: Math.round(data[0]),
@@ -39,17 +39,19 @@ export default class Home extends React.Component {
         )}
         {this.state.currentChord.length > 0 && (
           <div className="chordBox">
-            <h2 className="titles">Chords filtered by fret:</h2>
-
-            <Nouislider
-              range={{ min: 0, max: 12 }}
-              start={[0, 12]}
-              step={1}
-              tooltips={true}
-              connect
-              name="sliderValues"
-              onUpdate={this.onChangeSlide.bind(this)}
-            />
+            <div className="RangeBox">
+              <h2 className="titles">Chords filtered by fret:</h2>
+              <Nouislider
+                className="rangeSlider"
+                range={{ min: 0, max: 12 }}
+                start={[0, 12]}
+                step={1}
+                tooltips={true}
+                connect
+                name="sliderValues"
+                onUpdate={this.onChangeSlide.bind(this)}
+              />
+            </div>
 
             <FilterbyFret
               chord={this.state.currentChord}
@@ -58,6 +60,8 @@ export default class Home extends React.Component {
             />
           </div>
         )}
+
+        <ScaleRender />
       </React.Fragment>
     )
   }

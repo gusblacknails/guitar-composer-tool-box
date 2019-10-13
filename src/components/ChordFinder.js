@@ -85,7 +85,7 @@ class ChordsFinder extends React.Component {
     return (
       <div className="chordsBox">
         {this.state.basic.length > 0 && (
-          <div>
+          <div class="chordChildBox">
             <h2 class="titles">Basic Chords</h2>
             <div
               className="chordBasic"
@@ -94,7 +94,7 @@ class ChordsFinder extends React.Component {
           </div>
         )}
         {this.state.barre.length > 0 && (
-          <div>
+          <div class="chordChildBox">
             <h2 className="titles">Barre Chords</h2>
             <div
               className="chordBasic"

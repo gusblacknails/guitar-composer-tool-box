@@ -44,7 +44,7 @@ class FilterbyFret extends React.Component {
         if (chordInfo.chords[0].name.indexOf(props.chord) !== -1 && is) {
           filteredChords.push(
             <div
-              className="chordBasic"
+              className="chordFiltered"
               dangerouslySetInnerHTML={{
                 __html: instrument.getChordLayout(chord.tab.join(""), {
                   name: chordInfo.chords[0].name,
