@@ -1,3 +1,6 @@
+body {
+  margin: 0;
+}
 .noUi-target {
   width: 90% !important;
 }
@@ -8,8 +11,8 @@
   overflow-x: hidden;
 }
 .titles {
-  background: ghostwhite;
-  padding: 0.5em;
+  background: darkgrey;
+  color: white;
 }
 .noUi-target {
   margin: 1em;
@@ -29,4 +32,7 @@
 }
 .noUi-connect {
   background: black;
+}
+.MuiButton-containedPrimary {
+  background-color: #000000 !important;
 }

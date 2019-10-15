@@ -8,7 +8,6 @@
 }
 .chordBasic {
   display: flex;
-  width: inherit;
   padding: 1em;
   flex-direction: row;
   /* background: #bbb; */
@@ -21,7 +20,7 @@
   display: flex;
 
   justify-content: left;
-  background: #bbb;
+  background: #bbbbbb;
   margin: 0.5em;
 }
 .chordChildBox {
@@ -33,6 +32,8 @@
   width: 100%;
 }
 .titles {
+  display: flex;
+  justify-content: space-around;
   font-family: sans-serif;
   font-weight: 300;
 }
@@ -58,12 +59,16 @@
 }
 .chordFlex {
   display: flex;
+  justify-content: space-around;
   width: 100%;
   background: #a9a9a9;
 }
 table.chord {
   background-color: #bbbb;
   /* transform: scale(0.7); */
+}
+.noUi-value-horizontal {
+  font: icon;
 }
 
 @media (min-width: 100px) {
