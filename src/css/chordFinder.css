@@ -7,21 +7,30 @@
   background-color: #3f51b5;
 }
 .chordBasic {
-  padding: 1em;
   display: flex;
+  width: inherit;
+  padding: 1em;
   flex-direction: row;
-  justify-content: left;
-  background: #bbb;
+  /* background: #bbb; */
+}
+.chordBasic .chord caption {
+  position: relative;
+  bottom: 4px;
 }
 .chordFiltered {
   display: flex;
-  flex-direction: row;
+
   justify-content: left;
   background: #bbb;
   margin: 0.5em;
 }
 .chordChildBox {
   width: 50%;
+}
+.chordChildBoxSingle {
+  /* display: flex;
+  flex-direction: row; */
+  width: 100%;
 }
 .titles {
   font-family: sans-serif;
@@ -30,6 +39,9 @@
 .chordsBox {
   display: flex;
   justify-content: center;
+}
+.filteredChords:hover {
+  overflow: scroll;
 }
 .filteredChords {
   display: flex;
@@ -43,4 +55,27 @@
 .chord caption {
   background-color: #848181;
   border-radius: 0;
+}
+.chordFlex {
+  display: flex;
+  width: 100%;
+  background: #a9a9a9;
+}
+table.chord {
+  background-color: #bbbb;
+  /* transform: scale(0.7); */
+}
+
+@media (min-width: 100px) {
+  /* .table.chord, */
+  .chordFiltered {
+    transform: scale(0.7);
+  }
+}
+
+@media (min-width: 700px) {
+  /* .table.chord, */
+  .chordFiltered {
+    transform: scale(1);
+  }
 }

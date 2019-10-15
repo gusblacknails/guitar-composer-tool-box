@@ -26,9 +26,8 @@ export default class ScaleRender extends React.Component {
     }
     const canvas = this.myRef.current
     console.log(Fretboard)
-    const fretboard = new Fretboard(document.getElementById("theCanvas"), 24)
-    // const ctx = canvas.getContext("2d")
-    // ctx.drawImage(fretboard.drawScale(scale.major, 2, 6, 15), 0, 0)
+    const fretboard = new Fretboard(canvas, 24)
+    fretboard.drawScale(scale.major, 2, 6, 15)
   }
   render() {
     return (

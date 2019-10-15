@@ -70,10 +70,7 @@ class FilterbyFret extends React.Component {
     return (
       <div className="chordsBox">
         {this.state.chords.length > 0 && (
-          <div className="filteredChords">
-            <div />
-            {this.state.chords}
-          </div>
+          <div className="filteredChords">{this.state.chords}</div>
         )}
       </div>
     )
