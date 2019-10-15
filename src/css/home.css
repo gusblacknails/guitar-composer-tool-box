@@ -60,6 +60,22 @@ body {
 .MuiButton-containedPrimary {
   background-color: #000000 !important;
 }
-.makeStyles-margin-2 {
-  margin-left: 0 !important;
+.chordSelector {
+  position: relative;
+  right: 0.5em;
+}
+.jss1,
+.makeStyles-root-1 {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  right: 0.5em;
+}
+.headSection {
+  display: flex;
+  flex-direction: row;
+}
+#chordSelectors {
+  display: flex;
+  flex-direction: row;
 }
