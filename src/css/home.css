@@ -14,6 +14,30 @@ body {
   background: darkgrey;
   color: white;
 }
+.mainTitle {
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 25px;
+  letter-spacing: 0px;
+  word-spacing: 3.2px;
+  color: #000000;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+}
+.titleSentence {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 17px;
+  letter-spacing: 0px;
+  word-spacing: -5px;
+  color: #000000;
+  font-weight: 400;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: none;
+}
 .noUi-target {
   margin: 1em;
   margin-bottom: 3em;
@@ -35,4 +59,7 @@ body {
 }
 .MuiButton-containedPrimary {
   background-color: #000000 !important;
+}
+.makeStyles-margin-2 {
+  margin-left: 0;
 }

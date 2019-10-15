@@ -30,6 +30,10 @@ export default class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <h1 className="mainTitle">The Guitar Composers ToolBox</h1>
+        <h2 className="titleSentence">
+          Find the chord or scale that fits into your song
+        </h2>
         <OutlinedInputAdornments currentChord={this.callbackCurrentChord} />
         {this.state.currentChord.length > 0 && (
           <ChordFinder chord={this.state.currentChord} />
