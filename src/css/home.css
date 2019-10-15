@@ -61,5 +61,5 @@ body {
   background-color: #000000 !important;
 }
 .makeStyles-margin-2 {
-  margin-left: 0;
+  margin-left: 0 !important;
 }
