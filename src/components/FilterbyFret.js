@@ -14,6 +14,8 @@ class FilterbyFret extends React.Component {
     let instrument = new chordictionary.Instrument("EADGBE", 24, 5, 4)
     let filteredChords = []
     let chordFind = instrument.getChordsList(props.chord)
+    console.log("CHORD_FILTERED:", chordFind)
+
     const fitsOnParameters = (chord, props) => {
       let counter = 0
 
@@ -40,8 +42,13 @@ class FilterbyFret extends React.Component {
 
       try {
         let is = fitsOnParameters(chord, this.props)
-
-        if (chordInfo.chords[0].name.indexOf(props.chord) !== -1 && is) {
+        console.log(
+          "CHORD_FILTERED_MIDDLE:",
+          chord,
+          is,
+          chordInfo.chords[0].name.indexOf(props.chord)
+        )
+        if (chordInfo.chords[0].name.indexOf(this.props.chord) !== -1 && is) {
           filteredChords.push(
             <div
               className="chordFiltered"
@@ -54,10 +61,13 @@ class FilterbyFret extends React.Component {
             ></div>
           )
         }
-      } catch (err) {}
+      } catch (err) {
+        console.log("CHORD_FILTERED_ERROR:", err)
+      }
     })
 
     this.setState({ chords: filteredChords })
+    console.log("CHORD_FILTERED_OUT:", filteredChords)
   }
   componentWillReceiveProps(props) {
     this.filteredChords(props)

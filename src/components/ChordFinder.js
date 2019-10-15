@@ -28,9 +28,14 @@ class ChordsFinder extends React.Component {
     console.log("chroma:", PcSet.chroma(["C", "D", "E"]))
     // Related Scales from a give chord
     // let relatedScales = Scale.modeNames("pentatonic")
+    let chordFind
+    try {
+      chordFind = instrument.getChordsList(props.chord)
+      console.log("CHORD:", chordFind)
+    } catch (e) {
+      console.log("ERROR:", e)
+    }
 
-    let chordFind = instrument.getChordsList(props.chord)
-    console.log("CHORD:", chordFind)
     let foundBasicChords = []
     chordFind.chordList.forEach(chord => {
       if (chord.tag[0] === "basic") {
@@ -59,7 +64,7 @@ class ChordsFinder extends React.Component {
 
     let basicChords = []
     let barChords = []
-
+    console.log("MIDDLE_OUT:", foundBasicChords)
     foundBasicChords.forEach(chord => {
       if (chord.tag == "basic") {
         let chordInfo = instrument.getChordInfo(chord.tab.join(""))
@@ -93,6 +98,7 @@ class ChordsFinder extends React.Component {
     })
 
     this.setState({ basic: basicChords, barre: barChords })
+    console.log("OUT:", this.state)
   }
   componentWillReceiveProps(props) {
     this.ceroToThirdFretFilter(props)
