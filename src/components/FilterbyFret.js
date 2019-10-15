@@ -42,13 +42,14 @@ class FilterbyFret extends React.Component {
 
       try {
         let is = fitsOnParameters(chord, this.props)
-        console.log(
-          "CHORD_FILTERED_MIDDLE:",
-          chord,
-          is,
-          chordInfo.chords[0].name.indexOf(props.chord)
-        )
+
         if (chordInfo.chords[0].name.indexOf(this.props.chord) !== -1 && is) {
+          console.log(
+            "CHORD_FILTERED_MIDDLE:",
+            chord,
+            is,
+            chordInfo.chords[0].name.indexOf(props.chord)
+          )
           filteredChords.push(
             <div
               className="chordFiltered"
@@ -72,8 +73,8 @@ class FilterbyFret extends React.Component {
   componentWillReceiveProps(props) {
     this.filteredChords(props)
   }
-  componentWillMount() {
-    this.filteredChords(this.props)
+  async componentWillMount() {
+    await this.filteredChords(this.props)
   }
 
   render() {
