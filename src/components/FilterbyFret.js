@@ -40,30 +40,26 @@ class FilterbyFret extends React.Component {
     chordFind.chordList.forEach(chord => {
       let chordInfo = instrument.getChordInfo(chord.tab.join(""))
 
-      try {
-        let is = fitsOnParameters(chord, this.props)
+      let is = fitsOnParameters(chord, this.props)
 
-        if (chordInfo.chords[0].name.indexOf(this.props.chord) !== -1 && is) {
-          console.log(
-            "CHORD_FILTERED_MIDDLE:",
-            chord,
-            is,
-            chordInfo.chords[0].name.indexOf(props.chord)
-          )
-          filteredChords.push(
-            <div
-              className="chordFiltered"
-              dangerouslySetInnerHTML={{
-                __html: instrument.getChordLayout(chord.tab.join(""), {
-                  name: chordInfo.chords[0].name,
-                  notes: chordInfo.chords[0].intervals,
-                }),
-              }}
-            ></div>
-          )
-        }
-      } catch (err) {
-        console.log("CHORD_FILTERED_ERROR:", err)
+      if (chordInfo.chords[0].name.indexOf(this.props.chord) !== -1 && is) {
+        console.log(
+          "CHORD_FILTERED_MIDDLE:",
+          chord,
+          is,
+          chordInfo.chords[0].name.indexOf(props.chord)
+        )
+        filteredChords.push(
+          <div
+            className="chordFiltered"
+            dangerouslySetInnerHTML={{
+              __html: instrument.getChordLayout(chord.tab.join(""), {
+                name: chordInfo.chords[0].name,
+                notes: chordInfo.chords[0].intervals,
+              }),
+            }}
+          ></div>
+        )
       }
     })
 
@@ -73,8 +69,8 @@ class FilterbyFret extends React.Component {
   componentWillReceiveProps(props) {
     this.filteredChords(props)
   }
-  async componentWillMount() {
-    await this.filteredChords(this.props)
+  componentWillMount() {
+    this.filteredChords(this.props)
   }
 
   render() {

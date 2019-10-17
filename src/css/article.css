@@ -1,0 +1,41 @@
+.guitarChord > button {
+  background-color: aqua;
+}
+.chordProgressionBox {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1em;
+  background: darkgray;
+  border-radius: 10px;
+}
+.chordTriadsShapesBox {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  justify-content: column;
+  flex-wrap: wrap;
+  padding: 1em;
+  background: darkgray;
+  border-radius: 10px;
+}
+span {
+  padding: 1em;
+}
+.chordTriadsShapesRows {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+text {
+  font-size: 0.7em;
+  position: relative;
+  bottom: 2px;
+}
+h1 {
+  padding-top: 0.5em;
+  font-size: 1.5rem;
+}

@@ -6948,6 +6948,14 @@ gatsby-plugin-google-analytics@^2.1.23:
   dependencies:
     "@babel/runtime" "^7.6.3"
 
+gatsby-plugin-google-gtag@^1.1.14:
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-1.1.14.tgz#08b5cde6d9d6b8c670f845871829bacf102b2a9a"
+  integrity sha512-fpCf/4uSc+mKl6/peCZ1RBUcKfy0ca5WiBr0j1g9YLEmImRfrJEzOVbSDoTmSzHrOTETWRXkb+wcClxINCNN7w==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    minimatch "^3.0.4"
+
 gatsby-plugin-manifest@^2.2.20:
   version "2.2.20"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.20.tgz#67fa1d6335846097364c2eceece5a4bdc326706e"
@@ -12627,6 +12635,13 @@ react-fast-compare@^2.0.2:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
 
+react-guitar-chords@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-guitar-chords/-/react-guitar-chords-1.0.0.tgz#180271535cc73da720796c473a083f8853f77b3b"
+  integrity sha512-0NWaoF9amPESiyyGEE/kqLsF1YXZ+LDmSRnI85XebMT9yWifeQn7Gd92PH77NpHkgKH5D5cY7Xwcec5xOO5f8w==
+  dependencies:
+    webaudiofont "^2.5.26"
+
 react-helmet@^5.2.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.1.tgz#16a7192fdd09951f8e0fe22ffccbf9bb3e591ffa"
@@ -15264,6 +15279,11 @@ wbuf@^1.1.0, wbuf@^1.7.2, wbuf@^1.7.3:
   integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
   dependencies:
     minimalistic-assert "^1.0.0"
+
+webaudiofont@^2.5.26:
+  version "2.5.48"
+  resolved "https://registry.yarnpkg.com/webaudiofont/-/webaudiofont-2.5.48.tgz#8e142c8970c8ed5ce30459b85826caa486c2d74f"
+  integrity sha512-fhcEptVrT+fUMo4FsbgVzN8Yh656nTAidQKWolhkOCSNcJqvK1nwDt5uZUx4XGWqlktJgjWcz4MdDVlbffJARQ==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"

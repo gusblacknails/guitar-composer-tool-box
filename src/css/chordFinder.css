@@ -10,6 +10,7 @@
   display: flex;
   padding: 1em;
   flex-direction: row;
+
   /* background: #bbb; */
 }
 .chordBasic .chord caption {
@@ -60,11 +61,13 @@
 .chordFlex {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   width: 100%;
   background: #a9a9a9;
 }
 table.chord {
   background-color: #bbbb;
+  width: 8em;
   /* transform: scale(0.7); */
 }
 .noUi-value-horizontal {
@@ -74,7 +77,14 @@ table.chord {
 @media (min-width: 100px) {
   /* .table.chord, */
   .chordFiltered {
-    transform: scale(0.7);
+    /* transform: scale(0.7); */
+  }
+  .filteredChords {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 }
 

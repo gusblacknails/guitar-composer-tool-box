@@ -1,6 +1,9 @@
 body {
   margin: 0;
 }
+/* h2 {
+  font-size: 2em;
+} */
 .noUi-target {
   width: 90% !important;
 }
@@ -13,6 +16,7 @@ body {
 .titles {
   background: darkgrey;
   color: white;
+  font-size: 1.5em;
 }
 .mainTitle {
   font-family: Impact, Charcoal, sans-serif;
@@ -48,15 +52,11 @@ body {
   height: 73vh;
   overflow-y: scroll;
 }
-.body {
-  margin: 0;
-}
+
 .noUi-marker-horizontal.noUi-marker-large {
   height: 9px;
 }
-.noUi-connect {
-  background: black;
-}
+
 .MuiButton-containedPrimary {
   background-color: #000000 !important;
 }
@@ -78,4 +78,20 @@ body {
 #chordSelectors {
   display: flex;
   flex-direction: row;
+}
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #a9a9a9 !important;
+}
+.MuiAppBar-root {
+  height: 4em;
+}
+.noUi-connect {
+  background: black !important;
+}
+.fret-number {
+  text-indent: 1px;
+}
+#chordByFred {
+  margin-top: 1em;
 }

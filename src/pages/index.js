@@ -1,30 +1,18 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import NavBar from "../header"
 import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
 import Home from "../components/Home"
-
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Guitar Composers ToolBox" />
-    <Home />
-    {/* <h1>Hi Gus</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+  <React.Fragment>
+    <NavBar />
+    <Layout>
+      <SEO title="Guitar Composers ToolBox" />
 
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div> */}
-
-    <Link
-      style={{ fontFamily: "sans-serif", color: "black" }}
-      to="/privacyPolicy/"
-    >
-      Privacy Policy
-    </Link>
-  </Layout>
+      <Home />
+    </Layout>
+  </React.Fragment>
 )
 
 export default IndexPage
