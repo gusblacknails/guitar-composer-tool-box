@@ -11,7 +11,7 @@ const SecondPage = () => (
     <NavBar />
     <Layout>
       <SEO title="Triads" />
-      <h1>Triads, why they are so important?</h1>
+      <h1>Triads, why are they so important?</h1>
       <p>
         There is a common scenario in many bands with two guitars where both
         guitars are playing exactly the same chords at some point in the song.
