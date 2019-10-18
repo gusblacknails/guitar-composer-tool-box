@@ -16,8 +16,8 @@ class ChordsFinder extends React.Component {
     }
   }
   ceroToThirdFretFilter(props) {
-    // let instrument = new chordictionary.Instrument("EADGBE", 24, 5, 4)
-    let instrument = new chordictionary.Instrument("GCEA", 24, 5, 4)
+    let instrument = new chordictionary.Instrument("EADGBE", 24, 5, 4)
+    // let instrument = new chordictionary.Instrument("GCEA", 24, 5, 4)
 
     //Get all chords that fits a given scale
     Scale.chords("pentatonic") // => ["5", "64", "M", "M6", "Madd9", "Msus2"]
@@ -118,7 +118,7 @@ class ChordsFinder extends React.Component {
     return useClass
   }
   render() {
-    console.log("FIRED_BASIC:", this.props)
+    console.log("FIRED_BASIC:", this.props, this.state.basic.length)
     // console.log("modes:", PcSet.isEqual("c2 d5 e6", "c6 e3 d1"))
     // console.log("isChroma : ", PcSet.isChroma("101010101010"))
     // console.log("scale:", Scale("c5 pentatonic"))
