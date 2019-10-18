@@ -63,7 +63,7 @@ const chordTypes = [
     label: "Power chord",
   },
   {
-    value: "",
+    value: "Maj",
     label: "Major",
   },
   {

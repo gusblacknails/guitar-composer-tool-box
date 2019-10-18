@@ -45,7 +45,7 @@ const NavBar = props => {
                     style={{ fontFamily: "sans-serif", color: "black" }}
                     to="/triads_1/"
                   >
-                    Triads, why they are so important?
+                    Triads, why are they so important?
                   </Link>
                 </DropdownItem>
                 <DropdownItem></DropdownItem>
