@@ -96,3 +96,13 @@ body {
 #chordByFred {
   margin-top: 1em;
 }
+form {
+  margin-top: 1em;
+}
+.MuiButton-label {
+  position: relative;
+  bottom: 0.2em;
+}
+.makeStyles-button-4 {
+  height: 4em;
+}
