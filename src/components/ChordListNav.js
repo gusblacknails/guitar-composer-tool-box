@@ -5,7 +5,7 @@ import TextField from "@material-ui/core/TextField"
 import MenuItem from "@material-ui/core/MenuItem"
 import Button from "@material-ui/core/Button"
 
-import { chord } from "tonal-dictionary"
+// import { chord } from "tonal-dictionary"
 
 const notes = [
   {
@@ -211,57 +211,55 @@ export default function OutlinedInputAdornments(props) {
   }
 
   return (
-    <React.Fragment>
-      <form values={values} handleChangeForm={handleChange}>
-        <div className={classes.root}>
-          <TextField
-            select
-            className={clsx(classes.margin, classes.textField)}
-            variant="outlined"
-            label="Select Root Note"
-            value={values.notes}
-            onChange={handleChange("notes")}
-            InputProps={
-              {
-                // startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
-              }
+    <form values={values} handleChangeForm={handleChange}>
+      <div className={classes.root}>
+        <TextField
+          select
+          className={clsx(classes.margin, classes.textField)}
+          variant="outlined"
+          label="Select Root Note"
+          value={values.notes}
+          onChange={handleChange("notes")}
+          InputProps={
+            {
+              // startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
             }
-          >
-            {notes.map(option => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-          <TextField
-            select
-            className={clsx(classes.margin, classes.textField)}
-            variant="outlined"
-            label="Select Type of Chord"
-            value={values.chordTypes}
-            onChange={handleChange("chordTypes")}
-            InputProps={
-              {
-                // startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
-              }
+          }
+        >
+          {notes.map(option => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        <TextField
+          select
+          className={clsx(classes.margin, classes.textField)}
+          variant="outlined"
+          label="Select Type of Chord"
+          value={values.chordTypes}
+          onChange={handleChange("chordTypes")}
+          InputProps={
+            {
+              // startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
             }
-          >
-            {chordTypes.map(option => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-            onClick={sendData}
-          >
-            Get Chord
-          </Button>
-        </div>
-      </form>
-    </React.Fragment>
+          }
+        >
+          {chordTypes.map(option => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          onClick={sendData}
+        >
+          Get Chord
+        </Button>
+      </div>
+    </form>
   )
 }

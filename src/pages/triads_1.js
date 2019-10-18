@@ -242,7 +242,8 @@ const SecondPage = () => (
       </div>
       <p>
         Using E and C shapes we can extract the rest of triad shapes for the 1st
-        to 3rd group of strings and for 2nd to 4th group of strings:
+        group of strings (from 1st to 3rd string) and for the 2nd group of
+        strings (from 2nd to 4th string):
       </p>
       <div className="chordTriadsShapesBox">
         <div className="chordTriadsShapesRows">

@@ -8,8 +8,8 @@ import * as Scale from "tonal-scale"
 import * as Chord from "tonal-chord"
 import * as PcSet from "tonal-pcset"
 class ChordsFinder extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       basic: [],
       barre: [],
@@ -100,12 +100,12 @@ class ChordsFinder extends React.Component {
     this.setState({ basic: basicChords, barre: barChords })
     console.log("OUT:", this.state)
   }
-  componentWillReceiveProps(props) {
-    this.ceroToThirdFretFilter(props)
+  componentWillReceiveProps(newProps) {
+    this.ceroToThirdFretFilter(newProps)
   }
-  componentWillMount() {
-    this.ceroToThirdFretFilter(this.props)
-  }
+  // componentWillMount() {
+  //   this.ceroToThirdFretFilter(this.props)
+  // }
   chordToggleClass() {
     let useClass =
       this.state.barre.length > 0 ? "chordChildBox" : "chordChildBoxSingle"
@@ -117,6 +117,7 @@ class ChordsFinder extends React.Component {
     return useClass
   }
   render() {
+    console.log("FIRED_BASIC:", this.props)
     // console.log("modes:", PcSet.isEqual("c2 d5 e6", "c6 e3 d1"))
     // console.log("isChroma : ", PcSet.isChroma("101010101010"))
     // console.log("scale:", Scale("c5 pentatonic"))

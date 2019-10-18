@@ -4,81 +4,87 @@ import "../css/chordFinder.css"
 import * as chordictionary from "chordictionary"
 
 class FilterbyFret extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       chords: [],
     }
   }
+  fitsOnParameters = (chord, props) => {
+    let counter = 0
+    // console.log("inside_fitsOnParameters", chord, props)
+
+    chord.tab.forEach(element => {
+      if (element === "x") {
+        counter += 1
+      }
+
+      if (element >= props.currentMinFret && element <= props.currentMaxFret) {
+        counter += 1
+      }
+    })
+    if (counter === chord.tab.length) {
+      // console.log("end_fitsOnParameters", true)
+      return true
+    } else {
+      // console.log("end_fitsOnParameters", false)
+      return false
+    }
+  }
   filteredChords(props) {
+    // console.log("INSIDE filteredChords:")
     let instrument = new chordictionary.Instrument("EADGBE", 24, 5, 4)
     let filteredChords = []
     let chordFind = instrument.getChordsList(props.chord)
-    console.log("CHORD_FILTERED:", chordFind)
+    // console.log("CHORD_FILTERED:", chordFind)
 
-    const fitsOnParameters = (chord, props) => {
-      let counter = 0
-
-      chord.tab.forEach(element => {
-        if (element === "x") {
-          counter += 1
-        }
-
-        if (
-          element >= props.currentMinFret &&
-          element <= props.currentMaxFret
-        ) {
-          counter += 1
-        }
-      })
-      if (counter === chord.tab.length) {
-        return true
-      } else {
-        return false
-      }
-    }
     chordFind.chordList.forEach(chord => {
       let chordInfo = instrument.getChordInfo(chord.tab.join(""))
+      let is = this.fitsOnParameters(chord, props)
 
-      let is = fitsOnParameters(chord, this.props)
+      // console.log(
+      //   "CHORD_FILTERED_MIDDLE:",
+      //   chord,
+      //   is,
+      //   chordInfo.chords[0].name
+      // )
+      try {
+        if (chordInfo.chords[0].name.indexOf(props.chord) !== -1 && is) {
+          console.log("AFTER_IF:")
 
-      if (chordInfo.chords[0].name.indexOf(this.props.chord) !== -1 && is) {
-        console.log(
-          "CHORD_FILTERED_MIDDLE:",
-          chord,
-          is,
-          chordInfo.chords[0].name.indexOf(props.chord)
-        )
-        filteredChords.push(
-          <div
-            className="chordFiltered"
-            dangerouslySetInnerHTML={{
-              __html: instrument.getChordLayout(chord.tab.join(""), {
-                name: chordInfo.chords[0].name,
-                notes: chordInfo.chords[0].intervals,
-              }),
-            }}
-          ></div>
-        )
+          filteredChords.push(
+            <div
+              className="chordFiltered"
+              dangerouslySetInnerHTML={{
+                __html: instrument.getChordLayout(chord.tab.join(""), {
+                  name: chordInfo.chords[0].name,
+                  notes: chordInfo.chords[0].intervals,
+                }),
+              }}
+            ></div>
+          )
+        }
+      } catch (e) {
+        // console.log("ERROR", e)
       }
     })
-
+    console.log("filteredChords", filteredChords)
     this.setState({ chords: filteredChords })
-    console.log("CHORD_FILTERED_OUT:", filteredChords)
   }
-  componentWillReceiveProps(props) {
-    this.filteredChords(props)
+  componentWillReceiveProps(newProps) {
+    // console.log("componentWillReceiveProps_filtered:", newProps, Date.now())
+    this.filteredChords(newProps)
   }
-  componentWillMount() {
-    this.filteredChords(this.props)
-  }
+  // componentWillMount() {
+  //   console.log("componentWillMount_filtered:", this.props)
+  //   this.filteredChords(this.props)
+  // }
 
   render() {
+    // console.log("FIRED_FILTERED:", this.props, Date.now())
     return (
       <div className="chordsBox">
-        {this.state.chords.length > 0 && (
-          <div className="filteredChords">{this.state.chords}</div>
-        )}
+        <div className="filteredChords">{this.state.chords}</div>
       </div>
     )
   }
