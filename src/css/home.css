@@ -1,9 +1,7 @@
 .homeBox {
   width: 100vw;
   height: 55em;
-  background-image: url("../media/home_background.jpg");
-  display: flex;
-  text-justify: newspaper;
+  background: url("../images/home_background.jpg");
 }
 .textContent {
   color: white;
