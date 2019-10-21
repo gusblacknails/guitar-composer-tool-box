@@ -4,6 +4,15 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 .mainBox {
+  margin: 0 2rem;
+}
+@media (min-width: 767px) {
+  .mainBox {
+    margin: 0 2rem !important;
+  }
+}
+.mainBox {
+  margin: 1em;
 }
 /*
 body {

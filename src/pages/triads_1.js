@@ -300,7 +300,7 @@ const SecondPage = () => (
           you know from where triads come and what's the theory behind it. In
           the next articles, we'll take a look at other common progressions
           using triads and which shapes are used for the
-          <b> minor, diminished </b> and <b>donminant seventh </b>triads .
+          <b> minor, diminished </b> and <b>dominant seventh </b>triads .
         </p>
       </div>
     </Layout>
