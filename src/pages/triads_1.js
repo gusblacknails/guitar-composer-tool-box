@@ -8,7 +8,6 @@ import NavBar from "../header"
 
 const SecondPage = () => (
   <React.Fragment>
-    <NavBar />
     <Layout>
       <SEO title="Triads" />
       <h1>Triads, why are they so important?</h1>
@@ -293,7 +292,6 @@ const SecondPage = () => (
         we'll take a look at other common progressions using triads and which
         shapes are used for the minor and diminished triads.
       </p>
-      <Link to="/">Go back to the homepage</Link>
     </Layout>
   </React.Fragment>
 )

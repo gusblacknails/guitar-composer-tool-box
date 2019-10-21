@@ -5,7 +5,7 @@ body {
   font-size: 2em;
 } */
 .noUi-target {
-  width: 90% !important;
+  /* width: 90% !important; */
 }
 .rangeSlider {
 }
@@ -46,7 +46,7 @@ body {
 .noUi-target {
   margin: 1em;
   margin-bottom: 3em;
-  width: 96.7% !important;
+  /* width: 96.7% !important; */
 }
 .chordFilteredBox {
   width: 100%;

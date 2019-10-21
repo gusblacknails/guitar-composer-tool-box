@@ -30,10 +30,34 @@ const NavBar = props => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
+            {/* <NavItem>
               <NavLink href="/">Chord Finder</NavLink>
-            </NavItem>
-
+            </NavItem> */}
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                Chord Finder
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  {" "}
+                  <Link
+                    style={{ fontFamily: "sans-serif", color: "black" }}
+                    to="/guitar-chord-finder/"
+                  >
+                    Guitar Chord Finder
+                  </Link>
+                </DropdownItem>
+                <DropdownItem>
+                  {" "}
+                  <Link
+                    style={{ fontFamily: "sans-serif", color: "black" }}
+                    to="/ukelele-chord-finder/"
+                  >
+                    Ukelele Chord Finder
+                  </Link>
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Articles

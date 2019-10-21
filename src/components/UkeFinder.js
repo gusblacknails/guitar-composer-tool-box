@@ -1,9 +1,9 @@
 import React from "react"
 import "../css/chordictionary.min.css"
-import "../css/chordFinder.css"
 import * as chordictionary from "chordictionary"
+import "../css/chordFinder.css"
 
-class FilterbyFret extends React.Component {
+class UkeChordsFinder extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -12,7 +12,6 @@ class FilterbyFret extends React.Component {
   }
   fitsOnParameters = (chord, props) => {
     let counter = 0
-    // console.log("inside_fitsOnParameters", chord, props)
 
     chord.tab.forEach(element => {
       if (element === "x") {
@@ -24,42 +23,30 @@ class FilterbyFret extends React.Component {
       }
     })
     if (counter === chord.tab.length) {
-      // console.log("end_fitsOnParameters", true)
       return true
     } else {
-      // console.log("end_fitsOnParameters", false)
       return false
     }
   }
-  filteredChords(props) {
-    // console.log("INSIDE filteredChords:")
-    let instrument = new chordictionary.Instrument(
-      chordictionary.tuning.guitar.standard.join(""),
+  chordFilter(props) {
+    let ukelele = new chordictionary.Instrument(
+      chordictionary.tuning.ukulele.standard.join(""),
       24,
       5,
       4
     )
     let filteredChords = []
-    let chordFind = instrument.getChordsList(props.chord)
-    // console.log("CHORD_FILTERED:", chordFind)
-
+    let chordFind = ukelele.getChordsList(props.chord)
     chordFind.chordList.forEach(chord => {
-      let chordInfo = instrument.getChordInfo(chord.tab.join(""))
+      let chordInfo = ukelele.getChordInfo(chord.tab.join(""))
       let is = this.fitsOnParameters(chord, props)
-
-      // console.log(
-      //   "CHORD_FILTERED_MIDDLE:",
-      //   chord,
-      //   is,
-      //   chordInfo.chords[0].name
-      // )
       try {
         if (chordInfo.chords[0].name.indexOf(props.chord) !== -1 && is) {
           filteredChords.push(
             <div
               className="chordFiltered"
               dangerouslySetInnerHTML={{
-                __html: instrument.getChordLayout(chord.tab.join(""), {
+                __html: ukelele.getChordLayout(chord.tab.join(""), {
                   name: chordInfo.chords[0].name,
                   notes: chordInfo.chords[0].intervals,
                 }),
@@ -68,18 +55,16 @@ class FilterbyFret extends React.Component {
           )
         }
       } catch (e) {
-        // console.log("ERROR", e)
+        console.log("ERROR", e)
       }
     })
-    // console.log("filteredChords", filteredChords)
     this.setState({ chords: filteredChords })
   }
   componentWillReceiveProps(newProps) {
-    this.filteredChords(newProps)
+    this.chordFilter(newProps)
   }
-
   render() {
-    // console.log("FIRED_FILTERED:", this.props, Date.now())
+    console.log("UKECHORDS:", this.state.chords)
     return (
       <div className="chordsBox">
         <div className="filteredChords">{this.state.chords}</div>
@@ -87,4 +72,4 @@ class FilterbyFret extends React.Component {
     )
   }
 }
-export default FilterbyFret
+export default UkeChordsFinder

@@ -1,13 +1,16 @@
 import React from "react"
-import OutlinedInputAdornments from "./ChordListNav"
-import ChordFinder from "./ChordFinder"
-import FilterbyFret from "./FilterbyFret"
+import OutlinedInputAdornments from "../components/ChordListNav"
+import ChordFinder from "../components/ChordFinder"
+import FilterbyFret from "../components/FilterbyFret"
 import Nouislider from "nouislider-react"
-import ScaleRender from "./ScaleRender"
+import Layout from "../components/layout"
+import ScaleRender from "../components/ScaleRender"
+import UkeChordsFinder from "../components/UkeFinder"
 import "nouislider/distribute/nouislider.css"
-import "../css/home.css"
+import "../css/guitarChordFinder.css"
+import SEO from "../components/seo"
 
-export default class Home extends React.Component {
+export default class GuitarChordFinder extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -30,15 +33,17 @@ export default class Home extends React.Component {
   render() {
     console.log("STATE:", this.state)
     return (
-      <React.Fragment>
+      <Layout>
+        <SEO title="Guitar Chord Finder" />
         <OutlinedInputAdornments currentChord={this.callbackCurrentChord} />
         {this.state.currentChord.length > 0 && (
           <React.Fragment>
+            <UkeChordsFinder chord={this.state.currentChord} />
             <ChordFinder chord={this.state.currentChord} />
             <div>
               <div className="RangeBox">
                 <h2 className="titles" id="chordByFred">
-                  Chords filtered by fret:
+                  Guitar Chords filtered by fret:
                 </h2>
                 <Nouislider
                   pips={{
@@ -65,7 +70,7 @@ export default class Home extends React.Component {
             </div>
           </React.Fragment>
         )}
-      </React.Fragment>
+      </Layout>
     )
   }
 }

@@ -17,22 +17,21 @@ class ChordsFinder extends React.Component {
   }
   ceroToThirdFretFilter(props) {
     let instrument = new chordictionary.Instrument("EADGBE", 24, 5, 4)
-    // let instrument = new chordictionary.Instrument("GCEA", 24, 5, 4)
 
     //Get all chords that fits a given scale
     Scale.chords("pentatonic") // => ["5", "64", "M", "M6", "Madd9", "Msus2"]
 
-    console.log("TOKEN:", Chord.tokenize(props.chord))
+    // console.log("TOKEN:", Chord.tokenize(props.chord))
     let fitChordsFromScales = Scale.supersets("pentatonic")
-    console.log("chord:", chord(props.chord), Chord.notes(props.chord))
+    // console.log("chord:", chord(props.chord), Chord.notes(props.chord))
 
-    console.log("chroma:", PcSet.chroma(["C", "D", "E"]))
+    // console.log("chroma:", PcSet.chroma(["C", "D", "E"]))
     // Related Scales from a give chord
     // let relatedScales = Scale.modeNames("pentatonic")
     let chordFind
     try {
       chordFind = instrument.getChordsList(props.chord)
-      console.log("CHORD:", chordFind)
+      // console.log("CHORD:", chordFind)
     } catch (e) {
       console.log("ERROR:", e)
     }
@@ -65,7 +64,7 @@ class ChordsFinder extends React.Component {
 
     let basicChords = []
     let barChords = []
-    console.log("MIDDLE_OUT:", foundBasicChords)
+    // console.log("MIDDLE_OUT:", foundBasicChords)
     foundBasicChords.forEach(chord => {
       if (chord.tag == "basic") {
         let chordInfo = instrument.getChordInfo(chord.tab.join(""))
@@ -99,7 +98,7 @@ class ChordsFinder extends React.Component {
     })
 
     this.setState({ basic: basicChords, barre: barChords })
-    console.log("OUT:", this.state)
+    // console.log("OUT:", this.state)
   }
   componentWillReceiveProps(newProps) {
     this.ceroToThirdFretFilter(newProps)
@@ -118,7 +117,7 @@ class ChordsFinder extends React.Component {
     return useClass
   }
   render() {
-    console.log("FIRED_BASIC:", this.props, this.state.basic.length)
+    // console.log("FIRED_BASIC:", this.props, this.state.basic.length)
     // console.log("modes:", PcSet.isEqual("c2 d5 e6", "c6 e3 d1"))
     // console.log("isChroma : ", PcSet.isChroma("101010101010"))
     // console.log("scale:", Scale("c5 pentatonic"))
@@ -126,13 +125,13 @@ class ChordsFinder extends React.Component {
       <div className="chordsBox">
         {this.state.basic.length > 0 && (
           <div class={this.chordToggleClass()}>
-            <h2 class="titles">Basic Chords</h2>
+            <h2 class="titles">Basic Guitar Chords</h2>
             <div className="chordFlex">{this.state.basic}</div>
           </div>
         )}
         {this.state.barre.length > 0 && (
           <div class={this.chordToggleClassBarre()}>
-            <h2 className="titles">Barre Chords</h2>
+            <h2 className="titles">Barre Guitar Chords</h2>
             <div className="chordFlex">{this.state.barre}</div>
           </div>
         )}
