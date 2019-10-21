@@ -28,7 +28,7 @@ class UkeChordsFinder extends React.Component {
       return false
     }
   }
-  chordFilter(props) {
+  chordFilter(fixedMajChord, props) {
     let ukelele = new chordictionary.Instrument(
       chordictionary.tuning.ukulele.standard.join(""),
       24,
@@ -36,12 +36,12 @@ class UkeChordsFinder extends React.Component {
       4
     )
     let filteredChords = []
-    let chordFind = ukelele.getChordsList(props.chord)
+    let chordFind = ukelele.getChordsList(fixedMajChord)
     chordFind.chordList.forEach(chord => {
       let chordInfo = ukelele.getChordInfo(chord.tab.join(""))
       let is = this.fitsOnParameters(chord, props)
       try {
-        if (chordInfo.chords[0].name.indexOf(props.chord) !== -1 && is) {
+        if (chordInfo.chords[0].name.indexOf(fixedMajChord) !== -1 && is) {
           filteredChords.push(
             <div
               className="chordFiltered"
@@ -60,11 +60,26 @@ class UkeChordsFinder extends React.Component {
     })
     this.setState({ chords: filteredChords })
   }
+  majorUkeChordFix(data) {
+    let lastThree
+    try {
+      lastThree = data.substr(data.length - 3)
+    } catch (e) {
+      console.log(e)
+    }
+    console.log("lastThree:", lastThree)
+    if (lastThree === "Maj") {
+      let newStr = data.substring(0, data.length - 3)
+      return newStr
+    } else {
+      return data
+    }
+  }
   componentWillReceiveProps(newProps) {
-    this.chordFilter(newProps)
+    let fixedMajChord = this.majorUkeChordFix(newProps.chord)
+    this.chordFilter(fixedMajChord, newProps)
   }
   render() {
-    console.log("UKECHORDS:", this.state.chords)
     return (
       <div className="chordsBox">
         <div className="filteredChords">{this.state.chords}</div>
