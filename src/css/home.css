@@ -1,0 +1,18 @@
+.homeBox {
+  width: 100vw;
+  height: 55em;
+  background-image: url("../media/home_background.jpg");
+  display: flex;
+  text-justify: newspaper;
+}
+.textContent {
+  color: white;
+  padding: 3em;
+  width: 100%;
+}
+@media (min-width: 790px) {
+  .textContent {
+    width: 57%;
+    font-size: large;
+  }
+}

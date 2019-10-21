@@ -62,7 +62,7 @@ module.exports = {
 const cfg = {
   siteMetadata: {
     title: `Guitar Composers ToolBox`,
-    description: `Find the the next chord or scale that will improve your song`,
+    description: `Find the next chord or scale that will improve your song`,
     author: `https://github.com/gusblacknails`,
   },
   plugins: [
