@@ -19,8 +19,21 @@ export default class GuitarChordFinder extends React.Component {
       currentMinFret: 0,
     }
   }
+  majorChordFix(data) {
+    console.log("DATA:", data)
+    let lastThree = data.substr(data.length - 3)
+    if (lastThree === "Maj") {
+      let newStr = data.substring(0, data.length - 3)
+      console.log("SIP", newStr)
+      return newStr
+    } else {
+      console.log("NOP")
+      return data
+    }
+  }
   callbackCurrentChord = childData => {
-    this.setState({ currentChord: childData })
+    let fixedChord = this.majorChordFix(childData)
+    this.setState({ currentChord: fixedChord })
   }
 
   onChangeSlide(data) {
@@ -38,7 +51,7 @@ export default class GuitarChordFinder extends React.Component {
         <OutlinedInputAdornments currentChord={this.callbackCurrentChord} />
         {this.state.currentChord.length > 0 && (
           <React.Fragment>
-            <UkeChordsFinder chord={this.state.currentChord} />
+            {/* <UkeChordsFinder chord={this.state.currentChord} /> */}
             <ChordFinder chord={this.state.currentChord} />
             <div>
               <div className="RangeBox">

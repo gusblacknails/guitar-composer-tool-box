@@ -100,6 +100,7 @@ class ChordsFinder extends React.Component {
     this.setState({ basic: basicChords, barre: barChords })
     // console.log("OUT:", this.state)
   }
+
   componentWillReceiveProps(newProps) {
     this.ceroToThirdFretFilter(newProps)
   }
