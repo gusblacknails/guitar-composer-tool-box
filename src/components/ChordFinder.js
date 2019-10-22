@@ -19,10 +19,10 @@ class ChordsFinder extends React.Component {
     let instrument = new chordictionary.Instrument("EADGBE", 24, 5, 4)
 
     //Get all chords that fits a given scale
-    Scale.chords("pentatonic") // => ["5", "64", "M", "M6", "Madd9", "Msus2"]
+    // Scale.chords("pentatonic") // => ["5", "64", "M", "M6", "Madd9", "Msus2"]
 
     // console.log("TOKEN:", Chord.tokenize(props.chord))
-    let fitChordsFromScales = Scale.supersets("pentatonic")
+    // let fitChordsFromScales = Scale.supersets("pentatonic")
     // console.log("chord:", chord(props.chord), Chord.notes(props.chord))
 
     // console.log("chroma:", PcSet.chroma(["C", "D", "E"]))
@@ -35,7 +35,7 @@ class ChordsFinder extends React.Component {
     } catch (e) {
       console.log("ERROR:", e)
     }
-
+    console.log("CHORDFIND:", chordFind)
     let foundBasicChords = []
     chordFind.chordList.forEach(chord => {
       if (chord.tag[0] === "basic") {

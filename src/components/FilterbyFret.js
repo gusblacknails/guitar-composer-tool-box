@@ -41,20 +41,27 @@ class FilterbyFret extends React.Component {
     )
     let filteredChords = []
     let chordFind = instrument.getChordsList(props.chord)
-    // console.log("CHORD_FILTERED:", chordFind)
+    console.log("CHORD_FILTERED:", chordFind)
 
     chordFind.chordList.forEach(chord => {
       let chordInfo = instrument.getChordInfo(chord.tab.join(""))
       let is = this.fitsOnParameters(chord, props)
+      // try {
+      //   console.log(
+      //     "CHORD_FILTERED_MIDDLE:",
+      //     chord,
+      //     is,
+      //     chordInfo.chords[0].name,
+      //     props.chord
+      //   )
+      // } catch (e) {
+      //   console.log("CHORD_FILTERED_MIDDLE_ERROR:", e)
+      // }
 
-      // console.log(
-      //   "CHORD_FILTERED_MIDDLE:",
-      //   chord,
-      //   is,
-      //   chordInfo.chords[0].name
-      // )
       try {
-        if (chordInfo.chords[0].name.indexOf(props.chord) !== -1 && is) {
+        if (is) {
+          // if (chordInfo.chords[0].name.indexOf(props.chord) !== -1 && is) {
+          // console.log("CHORD_FILTERED_BEFORE_PUSH:")
           filteredChords.push(
             <div
               className="chordFiltered"
@@ -68,7 +75,7 @@ class FilterbyFret extends React.Component {
           )
         }
       } catch (e) {
-        // console.log("ERROR", e)
+        console.log("ERROR", e)
       }
     })
     // console.log("filteredChords", filteredChords)
@@ -82,7 +89,18 @@ class FilterbyFret extends React.Component {
     // console.log("FIRED_FILTERED:", this.props, Date.now())
     return (
       <div className="chordsBox">
-        <div className="filteredChords">{this.state.chords}</div>
+        <div className="filteredChords">
+          <span className="enharmonic">
+            * Some of this chords may have a different name that the selected
+            one but the same exact notes. This is what is called
+            <a href="https://en.wikipedia.org/wiki/Enharmonic">
+              {" "}
+              Enharmonic chords
+            </a>
+            .
+          </span>
+          {this.state.chords}
+        </div>
       </div>
     )
   }

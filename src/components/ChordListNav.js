@@ -75,7 +75,7 @@ const chordTypes = [
     label: "Dominant seventh",
   },
   {
-    value: "Maj7",
+    value: "maj7",
     label: "Major seventh",
   },
   {
@@ -112,13 +112,13 @@ const chordTypes = [
   },
 
   {
-    value: "m(Maj7)",
-    label: "Minor, major seventh",
+    value: "m7b5",
+    label: "Minor seventh, flat fifth",
   },
 
   {
-    value: "m7b5",
-    label: "Minor seventh, flat fifth",
+    value: "6",
+    label: "Sixth",
   },
   {
     value: "m6",
@@ -133,7 +133,7 @@ const chordTypes = [
     label: "Minor sixth, added ninth",
   },
   {
-    value: "Maj6",
+    value: "maj6",
     label: "Major Sixth",
   },
   {
@@ -141,7 +141,7 @@ const chordTypes = [
     label: "Sixth, added ninth",
   },
   {
-    value: "Maj9",
+    value: "maj9",
     label: "Major ninth",
   },
   {
@@ -161,19 +161,19 @@ const chordTypes = [
     label: "Major eleventh",
   },
   {
-    value: "m13",
-    label: "Minor thirteen",
+    value: "m(maj7)",
+    label: "Minor, major seventh",
   },
+  // {
+  //   value: "m13",
+  //   label: "Minor thirteen",
+  // },
+  // {
+  //   value: "maj7#11",
+  //   label: "Major seventh, sharp eleventh",
+  // },
   {
-    value: "7#11",
-    label: "Seventh, sharp eleventh",
-  },
-  {
-    value: "Maj7#11",
-    label: "Major seventh, sharp eleventh",
-  },
-  {
-    value: "Maj13",
+    value: "maj13",
     label: "Major thirteen",
   },
 ]

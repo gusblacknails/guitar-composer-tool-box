@@ -41,7 +41,8 @@ class UkeChordsFinder extends React.Component {
       let chordInfo = ukelele.getChordInfo(chord.tab.join(""))
       let is = this.fitsOnParameters(chord, props)
       try {
-        if (chordInfo.chords[0].name.indexOf(fixedMajChord) !== -1 && is) {
+        if (is) {
+          // if (chordInfo.chords[0].name.indexOf(fixedMajChord) !== -1 && is) {
           filteredChords.push(
             <div
               className="chordFiltered"
@@ -82,7 +83,18 @@ class UkeChordsFinder extends React.Component {
   render() {
     return (
       <div className="chordsBox">
-        <div className="filteredChords">{this.state.chords}</div>
+        <div className="filteredChords">
+          <span className="enharmonic">
+            * Some of this chords may have a different name that the selected
+            one but the same exact notes. This is what is called
+            <a href="https://en.wikipedia.org/wiki/Enharmonic">
+              {" "}
+              Enharmonic chords
+            </a>
+            .
+          </span>
+          {this.state.chords}
+        </div>
       </div>
     )
   }

@@ -96,3 +96,6 @@ table.chord {
     transform: scale(1);
   }
 }
+.enharmonic {
+  width: 100%;
+}
