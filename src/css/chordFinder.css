@@ -4,7 +4,6 @@
 } */
 .chord caption {
   margin: 4px 0 0 0;
-  background-color: #3f51b5;
 }
 .chordBasic {
   display: flex;
@@ -35,8 +34,18 @@
 .titles {
   display: flex;
   justify-content: space-around;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
   font-weight: 300;
+  font-family: Anton, sans-serif;
+  /* font-weight: bold; */
+  text-align: center;
+  /* font-size: 72px !important; */
+  /* word-spacing: -3px; */
+  color: white !important;
+  text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+  padding-top: 0.2em;
+  height: 1.5em;
+  background: #d9c059;
 }
 .chordsBox {
   display: flex;
@@ -55,7 +64,7 @@
   padding-bottom: 0.5em;
 }
 .chord caption {
-  background-color: #848181;
+  background-color: #d9c059;
   border-radius: 0;
 }
 .chordFlex {
@@ -98,4 +107,5 @@ table.chord {
 }
 .enharmonic {
   width: 100%;
+  text-align: center;
 }

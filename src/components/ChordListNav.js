@@ -181,6 +181,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
+    justifyContent: "center",
+    paddingLeft: "1em",
   },
   margin: {
     margin: theme.spacing(1),

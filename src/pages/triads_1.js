@@ -22,7 +22,7 @@ const SecondPage = () => (
 
         <p>
           There are other situations like a band with an organ/keyboard player
-          vamping with chords that are taking up a lot of harmonic space. In
+          comping with chords that are taking up a lot of harmonic space. In
           this case, other chord instruments such as guitar must find their{" "}
           <b>own spot</b> if they want to deal with whatever the other players
           are laying down.
@@ -249,9 +249,10 @@ const SecondPage = () => (
           />
         </div>
         <p>
-          Using <b> E and C shapes</b> we can extract the rest of triad shapes
-          for the 1st group of strings (from 1st to 3rd string) and for the 2nd
-          group of strings (from 2nd to 4th string):
+          As you can see, triads are grouped by string sets. Using{" "}
+          <b> E and C shapes</b> we can extract the rest of triad shapes for the
+          1st set of strings (from 1st to 3rd string) and for the 2nd set of
+          strings (from 2nd to 4th string):
         </p>
         <div className="chordTriadsShapesBox">
           <div className="chordTriadsShapesRows">
@@ -300,7 +301,9 @@ const SecondPage = () => (
           you know from where triads come and what's the theory behind it. In
           the next articles, we'll take a look at other common progressions
           using triads and which shapes are used for the
-          <b> minor, diminished </b> and <b>dominant seventh </b>triads .
+          <b> minor, diminished </b> and <b>dominant seventh </b>triads.
+          Remember, understanding triads is basic if you want to arrange,
+          improvise or compose on guitar.
         </p>
       </div>
     </Layout>

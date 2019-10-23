@@ -31,7 +31,8 @@ export default class GuitarChordFinder extends React.Component {
     console.log("STATE:", this.state)
     return (
       <Layout>
-        <SEO title="Ukelele Chord Finder" />
+        <SEO title="Ukulele Chord Finder" />
+        <h1 className="ChordFinderTitle">UKULELE CHORD FINDER</h1>
         <OutlinedInputAdornments currentChord={this.callbackCurrentChord} />
         {this.state.currentChord.length > 0 && (
           <React.Fragment>

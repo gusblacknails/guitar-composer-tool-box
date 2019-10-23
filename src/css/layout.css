@@ -14,6 +14,22 @@ html {
 .mainBox {
   margin: 1em;
 }
+.layoutBox {
+  margin: 0 auto;
+  background-color: #dcdcdc;
+  background-image: url("../images/dark-wall.png");
+}
+.bg-light {
+  background-color: #d9c059 !important;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  text-shadow: rgb(0, 0, 0) 0.5px 0.5px 0.5px;
+}
+.logo {
+  width: 10em;
+}
+
 /*
 body {
   margin: 0;

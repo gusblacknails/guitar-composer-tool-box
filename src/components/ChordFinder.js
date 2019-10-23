@@ -126,13 +126,13 @@ class ChordsFinder extends React.Component {
       <div className="chordsBox">
         {this.state.basic.length > 0 && (
           <div class={this.chordToggleClass()}>
-            <h2 class="titles">Basic Guitar Chords</h2>
+            <h2 class="titles">Basic Chords</h2>
             <div className="chordFlex">{this.state.basic}</div>
           </div>
         )}
         {this.state.barre.length > 0 && (
           <div class={this.chordToggleClassBarre()}>
-            <h2 className="titles">Barre Guitar Chords</h2>
+            <h2 className="titles">Barre Chords</h2>
             <div className="chordFlex">{this.state.barre}</div>
           </div>
         )}
