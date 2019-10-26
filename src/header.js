@@ -26,14 +26,14 @@ const NavBar = props => {
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/" className="logo">
           {/* <h1 className="mainTitle">The Guitar Composers ToolBox</h1> */}
-          <img src={require("./images/logo.png")} className="logo" />
+          <img src={require("./images/logo_shadow.png")} className="logo" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            {/* <NavItem>
-              <NavLink href="/">Chord Finder</NavLink>
-            </NavItem> */}
+            <NavItem>
+              <NavLink href="/guitar-harmonizer/">Scale Harmonizer</NavLink>
+            </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Chord Finder

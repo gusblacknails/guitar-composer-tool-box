@@ -30,7 +30,7 @@ span {
   flex-wrap: wrap;
   border-radius: 10px;
 }
-text {
+.mainbox text {
   font-size: 0.7em;
   position: relative;
   bottom: 2px;

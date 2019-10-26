@@ -6,6 +6,8 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^4.5.0",
+    "@tombatossals/chords-db": "github:gusblacknails/chords-db#master",
+    "@tombatossals/react-chords": "^0.2.10",
     "@tonaljs/tonal": "^3.2.2",
     "bootstrap": "^4.3.1",
     "chordictionary": "0.1.0-beta.4",
@@ -28,6 +30,8 @@
     "react-guitar-chords": "^1.0.0",
     "react-helmet": "^5.2.1",
     "reactstrap": "^8.0.1",
+    "teoria": "^2.5.0",
+    "teoria-chord-progression": "^1.0.0",
     "tonal": "^2.2.2",
     "url-loader": "^2.2.0"
   },

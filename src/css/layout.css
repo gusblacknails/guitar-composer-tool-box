@@ -18,8 +18,10 @@ html {
   margin: 0 auto;
   background-color: #dcdcdc;
   background-image: url("../images/dark-wall.png");
+  min-height: 90em;
 }
 .bg-light {
+  padding: 0 1em;
   background-color: #d9c059 !important;
 }
 .navbar-light .navbar-nav .nav-link {
