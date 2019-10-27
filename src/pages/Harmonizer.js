@@ -1,6 +1,6 @@
 import React from "react"
-import "../css/chordictionary.min.css"
-import * as chordictionary from "chordictionary"
+// import "../css/chordictionary.min.css"
+// import * as chordictionary from "chordictionary"
 import "../css/chordFinder.css"
 
 // import { chord } from "tonal-dictionary"
@@ -66,6 +66,12 @@ class Harmonizer extends React.Component {
     if (out === "E#") {
       out = "F"
     }
+    if (out === "Cb") {
+      out = "B"
+    }
+    if (out === "Gb") {
+      out = "Fsharp"
+    }
 
     return out
   }
@@ -91,8 +97,14 @@ class Harmonizer extends React.Component {
       },
     }
     const lite = false
+    this.setState({
+      root: props.root,
+      scale: props.scale,
+    })
     // console.log("HARMONIZER PROPS:", props)
-    let scaleToHarmonize = teoria.scale(this.props.root, this.props.scale)
+    // console.log("HARMONIZER this PROPS:", props.root)
+
+    let scaleToHarmonize = teoria.scale(props.root, props.scale)
     // console.log("scaleToHarmonize:", scaleToHarmonize)
     let chords = []
     for (let i = 1; i <= scaleToHarmonize.scale.length; i++) {
@@ -105,7 +117,9 @@ class Harmonizer extends React.Component {
     } catch (e) {
       console.log("ERROR:", e)
     }
+
     // console.log("allChords:", allChords)
+    // console.log("scaleToHarmonize:", scaleToHarmonize, chords)
     let allChordsSeventh
     try {
       allChordsSeventh = teoriaChordProgression(scaleToHarmonize, chords, 4)
@@ -118,6 +132,7 @@ class Harmonizer extends React.Component {
     let chord
     let currentGrade = 0
     const scaleGrades = ["I", "II", "III", "IV", "V", "VI", "VII"]
+    console.log("allChords:", allChords)
     if (allChords) {
       allChords.chords.forEach(element => {
         let root = this.extractRoot(element.name)
@@ -141,7 +156,9 @@ class Harmonizer extends React.Component {
             />
           </div>
         )
+
         currentGrade += 1
+        console.log("out chord:", root, type, chord.positions[0])
       })
     }
 
@@ -164,7 +181,7 @@ class Harmonizer extends React.Component {
         )
         // console.log("chord:", chord)
         // console.log("allChords:", allChords)
-
+        console.log("in seventh chord:", root, type, chord)
         renderChordsSeventh.push(
           <div className="harmonizerChordbox">
             <div className="chordTitleBox">
@@ -180,12 +197,19 @@ class Harmonizer extends React.Component {
           </div>
         )
         currentGrade += 1
+        console.log("out chord:", root, type, chord.positions[0])
       })
     }
-    this.setState({
-      normalChords: renderChords,
-      seventhChords: renderChordsSeventh,
-    })
+    if (renderChords) {
+      this.setState({
+        normalChords: renderChords,
+      })
+    }
+    if (renderChordsSeventh) {
+      this.setState({
+        seventhChords: renderChordsSeventh,
+      })
+    }
   }
   componentWillReceiveProps(newProps) {
     this.harmonizeScale(newProps)
