@@ -132,7 +132,7 @@ class Harmonizer extends React.Component {
     let chord
     let currentGrade = 0
     const scaleGrades = ["I", "II", "III", "IV", "V", "VI", "VII"]
-    console.log("allChords:", allChords)
+    // console.log("allChords:", allChords)
     if (allChords) {
       allChords.chords.forEach(element => {
         let root = this.extractRoot(element.name)
@@ -158,7 +158,7 @@ class Harmonizer extends React.Component {
         )
 
         currentGrade += 1
-        console.log("out chord:", root, type, chord.positions[0])
+        // console.log("out chord:", root, type, chord.positions[0])
       })
     }
 
@@ -181,7 +181,7 @@ class Harmonizer extends React.Component {
         )
         // console.log("chord:", chord)
         // console.log("allChords:", allChords)
-        console.log("in seventh chord:", root, type, chord)
+        // console.log("in seventh chord:", root, type, chord)
         renderChordsSeventh.push(
           <div className="harmonizerChordbox">
             <div className="chordTitleBox">
@@ -197,7 +197,7 @@ class Harmonizer extends React.Component {
           </div>
         )
         currentGrade += 1
-        console.log("out chord:", root, type, chord.positions[0])
+        // console.log("out chord:", root, type, chord.positions[0])
       })
     }
     if (renderChords) {
