@@ -4,9 +4,9 @@ import * as chordictionary from "chordictionary"
 import "../css/chordFinder.css"
 
 // import { chord } from "tonal-dictionary"
-import * as Scale from "tonal-scale"
+// import * as Scale from "tonal-scale"
 // import * as Chord from "tonal-chord"
-import * as PcSet from "tonal-pcset"
+// import * as PcSet from "tonal-pcset"
 import Chord from "@tombatossals/react-chords/lib/Chord"
 import "../css/harmonizerChordStyles.css"
 import * as teoria from "teoria"
@@ -118,28 +118,32 @@ class Harmonizer extends React.Component {
     let chord
     let currentGrade = 0
     const scaleGrades = ["I", "II", "III", "IV", "V", "VI", "VII"]
-    allChords.chords.forEach(element => {
-      let root = this.extractRoot(element.name)
-      let type = this.extractType(element.symbol)
+    if (allChords) {
+      allChords.chords.forEach(element => {
+        let root = this.extractRoot(element.name)
+        let type = this.extractType(element.symbol)
 
-      chord = guitar.chords[`${root}`].find(chord => chord.suffix === `${type}`)
+        chord = guitar.chords[`${root}`].find(
+          chord => chord.suffix === `${type}`
+        )
 
-      renderChords.push(
-        <div className="harmonizerChordbox">
-          <div className="chordTitleBox">
-            <span className="chordGrade">{scaleGrades[currentGrade]}</span>
-            <span className="chordName">{root + " " + type}</span>
+        renderChords.push(
+          <div className="harmonizerChordbox">
+            <div className="chordTitleBox">
+              <span className="chordGrade">{scaleGrades[currentGrade]}</span>
+              <span className="chordName">{root + " " + type}</span>
+            </div>
+
+            <Chord
+              chord={chord.positions[0]}
+              instrument={defaultSetup}
+              lite={lite}
+            />
           </div>
-
-          <Chord
-            chord={chord.positions[0]}
-            instrument={defaultSetup}
-            lite={lite}
-          />
-        </div>
-      )
-      currentGrade += 1
-    })
+        )
+        currentGrade += 1
+      })
+    }
 
     // console.log(
     //   "allChordsSeventh:",
