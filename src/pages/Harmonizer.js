@@ -10,10 +10,10 @@ import * as PcSet from "tonal-pcset"
 import Chord from "@tombatossals/react-chords/lib/Chord"
 import "../css/harmonizerChordStyles.css"
 import * as teoria from "teoria"
-const guitar = require(`@tombatossals/chords-db/lib/guitar.json`)
-
+import * as teoriaChordProgression from "teoria-chord-progression"
 // const teoria = require("teoria"),
-teoriaChordProgression = require("teoria-chord-progression")
+// teoriaChordProgression = require("teoria-chord-progression")
+const guitar = require(`@tombatossals/chords-db/lib/guitar.json`)
 
 class Harmonizer extends React.Component {
   constructor(props) {
