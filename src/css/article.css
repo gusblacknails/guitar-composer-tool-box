@@ -20,7 +20,7 @@
   background: darkgray;
   border-radius: 10px;
 }
-span {
+.mainbox span {
   padding: 1em;
 }
 .chordTriadsShapesRows {

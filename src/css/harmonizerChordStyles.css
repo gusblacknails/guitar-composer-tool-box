@@ -21,3 +21,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+.chordTitleBox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

@@ -21,10 +21,12 @@ export default class GuitarHarmonizer extends React.Component {
     }
   }
   callbackCurrentScale = childData => {
-    this.setState({
-      currentScale: childData[1],
-      currentRoot: childData[0],
-    })
+    if (childData) {
+      this.setState({
+        currentScale: childData[1] || this.state.currentScale,
+        currentRoot: childData[0] || this.state.currentRoot,
+      })
+    }
   }
   onChangeSlide(data) {
     this.setState({
