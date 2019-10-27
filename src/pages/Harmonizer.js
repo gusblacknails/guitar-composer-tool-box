@@ -92,7 +92,7 @@ class Harmonizer extends React.Component {
     }
     const lite = false
     // console.log("HARMONIZER PROPS:", props)
-    let scaleToHarmonize = teoria.scale(props.root, props.scale)
+    let scaleToHarmonize = teoria.scale(this.props.root, this.props.scale)
     // console.log("scaleToHarmonize:", scaleToHarmonize)
     let chords = []
     for (let i = 1; i <= scaleToHarmonize.scale.length; i++) {
