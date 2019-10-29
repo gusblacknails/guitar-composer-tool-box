@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Home from "../components/Home"
 import SEO from "../components/seo"
-import Harmonizer from "./Harmonizer"
+// import Harmonizer from "../components/Harmonizer"
 import GuitarChordFinder from "./guitar-chord-finder"
 const IndexPage = () => (
   <React.Fragment>
@@ -11,7 +11,7 @@ const IndexPage = () => (
       <SEO title="Home" />
 
       <Home />
-      <Harmonizer />
+      {/* <Harmonizer /> */}
     </Layout>
   </React.Fragment>
 )

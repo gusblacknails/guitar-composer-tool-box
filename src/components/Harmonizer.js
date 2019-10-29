@@ -11,9 +11,7 @@ import Chord from "@tombatossals/react-chords/lib/Chord"
 import "../css/harmonizerChordStyles.css"
 import * as teoria from "teoria"
 import * as teoriaChordProgression from "teoria-chord-progression"
-// const teoria = require("teoria"),
-// teoriaChordProgression = require("teoria-chord-progression")
-const guitar = require(`@tombatossals/chords-db/lib/guitar.json`)
+import * as guitar from "@tombatossals/chords-db/lib/guitar.json"
 
 class Harmonizer extends React.Component {
   constructor(props) {
@@ -35,7 +33,13 @@ class Harmonizer extends React.Component {
   // console.log("chroma:", PcSet.chroma(["C", "D", "E"]))
   // DONT USE SCALES: chromatic, doubleharmonic, harmonicchromatic
   extractRoot(name) {
-    let out = name.charAt(0)
+    let out
+    if (name) {
+      out = name.charAt(0)
+    } else {
+      return name
+    }
+
     if (name.charAt(1) === "#") {
       out = out + "#"
     }
@@ -72,6 +76,9 @@ class Harmonizer extends React.Component {
     if (out === "Gb") {
       out = "Fsharp"
     }
+    if (out === "Fb") {
+      out = "E"
+    }
 
     return out
   }
@@ -101,11 +108,71 @@ class Harmonizer extends React.Component {
       root: props.root,
       scale: props.scale,
     })
-    // console.log("HARMONIZER PROPS:", props)
-    // console.log("HARMONIZER this PROPS:", props.root)
 
-    let scaleToHarmonize = teoria.scale(props.root, props.scale)
-    // console.log("scaleToHarmonize:", scaleToHarmonize)
+    // console.log("HARMONIZER this PROPS:", props.root)
+    // console.log("SCALE TYPE:", typeof props.scale === "string")
+    let scale_root
+    try {
+      scale_root = this.extractRoot(props.root)
+    } catch (e) {
+      console.log("scale_root_error:", e)
+    }
+
+    // console.log("HARMONIZER PROPS:", scale_root, props.root, props.scale)
+    if (scale_root === "Csharp") {
+      scale_root = "C#"
+      if (props.scale === "lydian") {
+        scale_root = "Db"
+      }
+    }
+    if (scale_root === "Fsharp") {
+      scale_root = "F#"
+    }
+    if (scale_root === "Eb") {
+      scale_root = "D#"
+      if (
+        props.scale === "major" ||
+        props.scale === "ionian" ||
+        props.scale === "lydian" ||
+        props.scale === "mixolydian" ||
+        props.scale === "harmonicminor" ||
+        props.scale === "melodicminor"
+      ) {
+        scale_root = "Eb"
+      }
+    }
+    if (scale_root === "Ab") {
+      scale_root = "G#"
+      if (
+        props.scale === "major" ||
+        props.scale === "ionian" ||
+        props.scale === "lydian" ||
+        props.scale === "harmonicminor" ||
+        props.scale === "melodicminor"
+      ) {
+        scale_root = "Ab"
+      }
+    }
+    // let scaleToHarmonizeTest = teoria.scale("Ab", "harmonicminor")
+    // console.log("scaleToHarmonizeTest:", scaleToHarmonizeTest)
+    // let testAllChords = teoriaChordProgression(scaleToHarmonizeTest, [
+    //   1,
+    //   2,
+    //   3,
+    //   4,
+    //   5,
+    //   6,
+    //   7,
+    // ])
+    // console.log("testAllChords:", testAllChords)
+    // let testChord = guitar.chords["G"].find(chord => chord.suffix === "dim")
+    // console.log("testChord:", testChord)
+
+    //c#: lydian
+    //d#: major, ionian, lydian, mixolydian, harmonicminor, melodicminor,
+    //g#: melodicminor, harmonicminor, lydian, ionian, major
+    let scaleToHarmonize = teoria.scale(scale_root, props.scale)
+
     let chords = []
     for (let i = 1; i <= scaleToHarmonize.scale.length; i++) {
       chords.push(i)
@@ -115,33 +182,40 @@ class Harmonizer extends React.Component {
     try {
       allChords = teoriaChordProgression(scaleToHarmonize, chords)
     } catch (e) {
-      console.log("ERROR:", e)
+      console.log("ERROR_teoriaChordProgression:", e)
     }
 
     // console.log("allChords:", allChords)
     // console.log("scaleToHarmonize:", scaleToHarmonize, chords)
     let allChordsSeventh
-    try {
+    if (props.scale != "minorpentatonic" && props.scale != "majorpentatonic") {
       allChordsSeventh = teoriaChordProgression(scaleToHarmonize, chords, 4)
-    } catch (e) {
-      console.error("allChordsSeventh_error:", allChordsSeventh)
     }
+    // try {
+    //   allChordsSeventh = teoriaChordProgression(scaleToHarmonize, chords, 4)
+    // } catch (e) {
+    //   console.error("allChordsSeventh_error:", e, allChordsSeventh)
+    // }
 
     let renderChords = []
     let renderChordsSeventh = []
     let chord
     let currentGrade = 0
     const scaleGrades = ["I", "II", "III", "IV", "V", "VI", "VII"]
-    // console.log("allChords:", allChords)
+    // console.log(
+    //   "allChords ==",
+    //   allChords,
+    //   typeof allChords.chords[5].name,
+    //   typeof allChords.chords[6].name
+    // )
     if (allChords) {
       allChords.chords.forEach(element => {
         let root = this.extractRoot(element.name)
         let type = this.extractType(element.symbol)
-
         chord = guitar.chords[`${root}`].find(
           chord => chord.suffix === `${type}`
         )
-
+        // console.log("allChords JUST BEFORE PETE:", element, root, type, chord)
         renderChords.push(
           <div className="harmonizerChordbox">
             <div className="chordTitleBox">
@@ -169,7 +243,7 @@ class Harmonizer extends React.Component {
     // )
     if (
       allChordsSeventh &&
-      allChordsSeventh.chords[0].name != allChords.chords[0].name
+      allChordsSeventh.chords[0].name !== allChords.chords[0].name
     ) {
       currentGrade = 0
       allChordsSeventh.chords.forEach(element => {
