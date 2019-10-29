@@ -3,10 +3,10 @@ import "../css/chordictionary.min.css"
 import * as chordictionary from "chordictionary"
 import "../css/chordFinder.css"
 
-import { chord } from "tonal-dictionary"
-import * as Scale from "tonal-scale"
-import * as Chord from "tonal-chord"
-import * as PcSet from "tonal-pcset"
+// import { chord } from "tonal-dictionary"
+// import * as Scale from "tonal-scale"
+// import * as Chord from "tonal-chord"
+// import * as PcSet from "tonal-pcset"
 class ChordsFinder extends React.Component {
   constructor(props) {
     super(props)
@@ -35,7 +35,6 @@ class ChordsFinder extends React.Component {
     } catch (e) {
       console.log("ERROR:", e)
     }
-    console.log("CHORDFIND:", chordFind)
     let foundBasicChords = []
     chordFind.chordList.forEach(chord => {
       if (chord.tag[0] === "basic") {

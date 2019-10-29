@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import TextField from "@material-ui/core/TextField"
 import MenuItem from "@material-ui/core/MenuItem"
 import Button from "@material-ui/core/Button"
+import "../css/nav.css"
 
 const notes = [
   {
@@ -93,8 +94,8 @@ const useStyles = makeStyles(theme => ({
 export default function ScaleList(props) {
   const classes = useStyles()
   const [values, setValues] = React.useState({
-    notes: "",
-    scale: "",
+    notes: "C",
+    scale: "Major",
   })
 
   const handleChange = prop => event => {

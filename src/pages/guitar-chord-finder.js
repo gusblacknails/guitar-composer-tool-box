@@ -4,7 +4,7 @@ import ChordFinder from "../components/ChordFinder"
 import FilterbyFret from "../components/FilterbyFret"
 import Nouislider from "nouislider-react"
 import Layout from "../components/layout"
-import ScaleRender from "../components/ScaleRender"
+// import ScaleRender from "../components/ScaleRender"
 import "nouislider/distribute/nouislider.css"
 import "../css/guitarChordFinder.css"
 import SEO from "../components/seo"
@@ -40,7 +40,6 @@ export default class GuitarChordFinder extends React.Component {
   }
 
   render() {
-    console.log("STATE:", this.state)
     return (
       <Layout>
         <SEO title="Guitar Chord Finder" />

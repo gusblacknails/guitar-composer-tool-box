@@ -68,7 +68,6 @@ class UkeChordsFinder extends React.Component {
     } catch (e) {
       console.log(e)
     }
-    console.log("lastThree:", lastThree)
     if (lastThree === "Maj") {
       let newStr = data.substring(0, data.length - 3)
       return newStr

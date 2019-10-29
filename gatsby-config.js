@@ -5,6 +5,7 @@ module.exports = {
     author: `https://github.com/gusblacknails`,
   },
   plugins: [
+    "gatsby-plugin-material-ui",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -13,6 +14,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -66,6 +68,7 @@ const cfg = {
     author: `https://github.com/gusblacknails`,
   },
   plugins: [
+    "gatsby-plugin-material-ui",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

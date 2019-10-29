@@ -3,7 +3,7 @@ import ScaleList from "../components/HarmonizerListNav"
 import Harmonizer from "../components/Harmonizer"
 import Layout from "../components/layout"
 // import Nouislider from "nouislider-react"
-import "nouislider/distribute/nouislider.css"
+// import "nouislider/distribute/nouislider.css"
 // import ScaleRender from "../components/ScaleRender"
 import "../css/harmonizerChordStyles.css"
 
