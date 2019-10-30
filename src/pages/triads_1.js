@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import GuitarChord from "react-guitar-chords"
 import Layout from "../components/layout"
 import SEO from "../components/seo"

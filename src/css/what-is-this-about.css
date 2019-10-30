@@ -1,0 +1,16 @@
+.homeBox {
+  width: 100vw;
+  height: 55em;
+  background: url("../images/home_background.jpg");
+}
+.textContent {
+  color: white;
+  padding: 3em;
+  width: 100%;
+}
+@media (min-width: 790px) {
+  .textContent {
+    width: 57%;
+    font-size: large;
+  }
+}

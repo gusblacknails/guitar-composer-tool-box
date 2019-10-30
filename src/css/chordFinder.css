@@ -59,7 +59,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding-left: 3.5em;
-  background: darkgray;
+  /* background: darkgray; */
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
@@ -72,7 +72,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-  background: #a9a9a9;
+  /* background: #a9a9a9; */
 }
 table.chord {
   background-color: #bbbb;
@@ -108,4 +108,5 @@ table.chord {
 .enharmonic {
   width: 100%;
   text-align: center;
+  padding: 0 1em;
 }

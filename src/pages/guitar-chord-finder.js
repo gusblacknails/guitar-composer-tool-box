@@ -46,42 +46,49 @@ export default class GuitarChordFinder extends React.Component {
         <div className="ChordFinderTitleBox">
           <h1 className="ChordFinderTitle">GUITAR CHORD FINDER</h1>
         </div>
-
-        <OutlinedInputAdornments currentChord={this.callbackCurrentChord} />
-        {this.state.currentChord.length > 0 && (
-          <React.Fragment>
-            {/* <UkeChordsFinder chord={this.state.currentChord} /> */}
-            <ChordFinder chord={this.state.currentChord} />
-            <div>
-              <div className="RangeBox">
-                <h2 className="titles" id="chordByFred">
-                  Guitar Chords filtered by fret:
-                </h2>
-                <Nouislider
-                  pips={{
-                    mode: "values",
-                    values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-                    density: 2,
-                  }}
-                  className="rangeSlider"
-                  range={{ min: 0, max: 12 }}
-                  start={[0, 12]}
-                  step={1}
-                  connect
-                  name="sliderValues"
-                  onUpdate={this.onChangeSlide.bind(this)}
-                />
-              </div>
-              <div className="chordFilteredBox">
-                <FilterbyFret
-                  chord={this.state.currentChord}
-                  currentMinFret={this.state.currentMinFret}
-                  currentMaxFret={this.state.currentMaxFret}
-                />
-              </div>
+        <div className="outerBox">
+          <div className="middleBox">
+            <div className="innerBox">
+              <OutlinedInputAdornments
+                currentChord={this.callbackCurrentChord}
+              />
+              {this.state.currentChord.length > 0 && (
+                <React.Fragment>
+                  {/* <UkeChordsFinder chord={this.state.currentChord} /> */}
+                  <ChordFinder chord={this.state.currentChord} />
+                  <div>
+                    <div className="RangeBox">
+                      <h2 className="titles" id="chordByFred">
+                        Guitar Chords filtered by fret:
+                      </h2>
+                      <Nouislider
+                        pips={{
+                          mode: "values",
+                          values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                          density: 2,
+                        }}
+                        className="rangeSlider"
+                        range={{ min: 0, max: 12 }}
+                        start={[0, 12]}
+                        step={1}
+                        connect
+                        name="sliderValues"
+                        onUpdate={this.onChangeSlide.bind(this)}
+                      />
+                    </div>
+                    <div className="chordFilteredBox">
+                      <FilterbyFret
+                        chord={this.state.currentChord}
+                        currentMinFret={this.state.currentMinFret}
+                        currentMaxFret={this.state.currentMaxFret}
+                      />
+                    </div>
+                  </div>
+                </React.Fragment>
+              )}
             </div>
-          </React.Fragment>
-        )}
+          </div>
+        </div>
       </Layout>
     )
   }

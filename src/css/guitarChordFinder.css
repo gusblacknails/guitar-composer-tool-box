@@ -10,11 +10,18 @@ body {
   background: gainsboro;
   overflow-x: hidden;
 }
+
 .titles {
   background: rgb(217, 192, 89);
   /* color: rgb(217, 192, 89); */
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
+@media (min-width: 767px) {
+  .titles {
+    font-size: 1.5em;
+  }
+}
+
 .mainTitle {
   letter-spacing: -1px;
   font-family: Anton, sans-serif;
@@ -40,9 +47,10 @@ body {
   text-transform: none;
 }
 .noUi-target {
-  margin: 1em;
-  margin-bottom: 3em;
+  /* margin: 1em;
+  margin-bottom: 3em; */
   /* width: 96.7% !important; */
+  margin: 2em 2em;
 }
 .noUi-value {
   color: black;
@@ -51,6 +59,9 @@ body {
   width: 100%;
   height: 80vh;
   overflow-y: scroll;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin: 1em 0;
 }
 
 .noUi-marker-horizontal.noUi-marker-large {
@@ -98,10 +109,10 @@ body {
 form {
   margin-top: 1em;
 }
-.MuiButton-label {
+/* .MuiButton-label {
   position: relative;
-  bottom: 0.2em;
-}
+  bottom: 0;
+} */
 .makeStyles-button-4 {
   height: 4em;
 }
@@ -110,17 +121,74 @@ form {
   font-family: Anton, sans-serif;
   font-weight: bold;
   text-align: center;
-  font-size: 44px !important;
+  font-size: 2em !important;
   word-spacing: -3px;
   color: rgb(217, 192, 89);
   text-shadow: rgb(0, 0, 0) 3px 3px 3px;
-  padding-bottom: 0.5em;
-  background-color: #dcdcdc;
-  background-image: url("../images/dark-leather.png");
+  height: 20vh;
+
+  /* padding-bottom: 0.5em; */
+  /* background-color: #dcdcdc; */
+  /* background-image: url("../images/dark-leather.png"); */
 }
-@media (min-width: 1023px) {
+.ChordFinderTitleBox {
+  background-image: url("../images/navBackground.png");
+  /* opacity: 0.5; */
+  height: 8vh;
+}
+.UkeChordFinderTitleBox {
+  background-image: url("../images/ukeBackground.png");
+  /* opacity: 0.5; */
+  height: 8vh;
+}
+@media (min-width: 767px) {
+  .ChordFinderTitleBox {
+    height: 20vh;
+  }
+  .UkeChordFinderTitleBox {
+    height: 20vh;
+  }
+}
+
+@media (min-width: 767px) {
   .ChordFinderTitle {
-    font-size: 72px !important;
+    font-size: 4em !important;
     padding-bottom: 0.2em;
   }
+}
+
+.outerBox {
+  padding: 0.5em;
+  background-color: white;
+  border-radius: 15px;
+  margin: 0.5em;
+}
+.middleBox {
+  background: #d9c059;
+  padding: 0.5em;
+  border-radius: 15px;
+}
+.innerBox {
+  background-image: url("../images/dark-wall.png");
+  background: #a6a6a6;
+  /* padding: 1em; */
+  border-radius: 15px;
+  margin: -1em 0em;
+}
+@media (min-width: 767px) {
+  .outerBox {
+    padding: 1em;
+    border-radius: 30px;
+    margin: 2em;
+  }
+  .middleBox {
+    padding: 1em;
+    border-radius: 30px;
+  }
+  .innerBox {
+    border-radius: 30px;
+  }
+}
+.noUi-target {
+  border: 2px solid #d9c059 !important;
 }

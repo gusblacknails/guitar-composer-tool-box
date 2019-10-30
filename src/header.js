@@ -22,7 +22,7 @@ const NavBar = props => {
   const toggle = () => setIsOpen(!isOpen)
 
   return (
-    <div>
+    <div className="">
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/" className="logo">
           {/* <h1 className="mainTitle">The Guitar Composers ToolBox</h1> */}
@@ -73,7 +73,14 @@ const NavBar = props => {
                     Triads, why are they so important?
                   </Link>
                 </DropdownItem>
-                <DropdownItem></DropdownItem>
+                <DropdownItem>
+                  <Link
+                    style={{ fontFamily: "sans-serif", color: "black" }}
+                    to="/what-is-this-about/"
+                  >
+                    What aims to be this site?
+                  </Link>
+                </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
                   <Link
