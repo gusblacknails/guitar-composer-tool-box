@@ -5,14 +5,13 @@ import Card from "@material-ui/core/Card"
 import CardHeader from "@material-ui/core/CardHeader"
 import CardMedia from "@material-ui/core/CardMedia"
 import CardContent from "@material-ui/core/CardContent"
-import CardActions from "@material-ui/core/CardActions"
 import CardActionArea from "@material-ui/core/CardActions"
-import Button from "@material-ui/core/Button"
-
+import chordFinderThumb from "../images/chordFinderThumb.jpg"
 import Typography from "@material-ui/core/Typography"
 import { red } from "@material-ui/core/colors"
 
 import "../css/home.css"
+// import { url } from "inspector"
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -59,11 +58,8 @@ export default function Home() {
               title="Guitar Chords Finder"
               subheader="Find the best chord for your needs"
             />
-            <CardMedia
-              className={classes.media}
-              image={require("../images/chordFinderThumb.jpg")}
-              title="Chord Finder Image"
-            />
+
+            <div id="chordFinderThumb"></div>
             <CardContent>
               <Typography
                 variant="body2"
@@ -89,11 +85,7 @@ export default function Home() {
               title="Ukulele Chords Finder"
               subheader="Which chord fits better with the last one?"
             />
-            <CardMedia
-              className={classes.media}
-              image={require("../images/ukeFinderThumb.jpg")}
-              title="Chord Finder Image"
-            />
+            <div id="ukeFinderThumb"></div>
             <CardContent>
               <Typography
                 variant="body2"
@@ -118,11 +110,7 @@ export default function Home() {
               title="Guitar Scale Harmonizer"
               subheader="Diatonic chords for the choosen scale"
             />
-            <CardMedia
-              className={classes.media}
-              image={require("../images/guitarScaleHarmonizeThumb.jpg")}
-              title="Scale Harmonizer Image"
-            />
+            <div id="guitarScaleHarmonizeThumb"></div>
             <CardContent>
               <Typography variant="body2" color="textSecondary" component="p">
                 There are <b>many different scales</b>, major, minor, blues,

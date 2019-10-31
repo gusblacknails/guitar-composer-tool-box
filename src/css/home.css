@@ -14,6 +14,33 @@
     font-size: large;
   }
 }
+#chordFinderThumb {
+  width: 100%;
+
+  position: relative;
+  height: 15em;
+  background-image: url("../images/chordFinderThumb.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#ukeFinderThumb {
+  width: 100%;
+
+  position: relative;
+  height: 15em;
+  background-image: url("../images/ukeFinderThumb.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#guitarScaleHarmonizeThumb {
+  width: 100%;
+
+  position: relative;
+  height: 15em;
+  background-image: url("../images/guitarScaleHarmonizeThumb.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 .homeTopImage {
   width: 100%;
   height: 13em;
