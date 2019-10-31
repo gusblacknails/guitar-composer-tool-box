@@ -12,11 +12,12 @@ const SecondPage = () => (
         <h1>Triads, why are they so important?</h1>
         <p>
           There is a common scenario in many bands with <b>two guitars</b> where
-          both guitars are playing exactly the same chords at some point in the
-          song. In these situations, in my opinion, the best is to stop playing
-          until the next section unless you know how to use triads. There is a
-          maxim that says:<b>“the bigger is the band the less you play“</b> . In
-          other words, “play less but better”.
+          both guitars are <b>playing exactly the same chords</b> at some point
+          in the song. In these situations, in my opinion, the best is to stop
+          playing until the next section unless you know how to use triads.
+          There is a maxim that says:
+          <b>“the bigger is the band the less you play“</b> . In other words,
+          “play less but better”.
         </p>
 
         <p>

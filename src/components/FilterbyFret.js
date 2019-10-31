@@ -91,8 +91,8 @@ class FilterbyFret extends React.Component {
       <div className="chordsBox">
         <div className="filteredChords">
           <span className="enharmonic">
-            * Some of this chords may have a different name that the selected
-            one but the same exact notes. This is what is called
+            * Some of this chords may have different name than the selected one
+            but the same exact notes. This is what is called
             <a href="https://en.wikipedia.org/wiki/Enharmonic">
               {" "}
               Enharmonic chords

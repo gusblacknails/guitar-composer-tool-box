@@ -110,3 +110,7 @@ table.chord {
   text-align: center;
   padding: 0 1em;
 }
+.RangeBox {
+  bottom: 1em;
+  position: relative;
+}

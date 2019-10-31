@@ -139,7 +139,6 @@ form {
 .UkeChordFinderTitleBox {
   background-image: url("../images/ukeBackground.png");
   /* opacity: 0.5; */
-  height: 8vh;
 }
 @media (min-width: 767px) {
   .ChordFinderTitleBox {
@@ -191,4 +190,14 @@ form {
 }
 .noUi-target {
   border: 2px solid #d9c059 !important;
+}
+@media (min-width: 767px) {
+  .selectorBox {
+    height: 3em;
+  }
+}
+@media (max-width: 767px) {
+  .UkeChordFinderTitleBox {
+    height: 4em;
+  }
 }

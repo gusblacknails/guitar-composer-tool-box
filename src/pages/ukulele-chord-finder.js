@@ -39,15 +39,18 @@ export default class GuitarChordFinder extends React.Component {
         <div className="outerBox">
           <div className="middleBox">
             <div className="innerBox">
-              <OutlinedInputAdornments
-                currentChord={this.callbackCurrentChord}
-              />
+              <div className="selectorBox">
+                <OutlinedInputAdornments
+                  currentChord={this.callbackCurrentChord}
+                />
+              </div>
+
               {this.state.currentChord.length > 0 && (
                 <React.Fragment>
                   <div>
-                    <div className="RangeBox">
+                    <div className="">
                       <h2 className="titles" id="chordByFred">
-                        Ukelele Chords filtered by fret:
+                        Ukelele Chords filtered by fret
                       </h2>
                       <Nouislider
                         pips={{
