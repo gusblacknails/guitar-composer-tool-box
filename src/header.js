@@ -52,7 +52,7 @@ const NavBar = props => {
                   {" "}
                   <Link
                     style={{ fontFamily: "sans-serif", color: "black" }}
-                    to="/ukelele-chord-finder/"
+                    to="/ukulele-chord-finder/"
                   >
                     Ukelele Chord Finder
                   </Link>
