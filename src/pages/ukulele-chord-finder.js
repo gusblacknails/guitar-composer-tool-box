@@ -33,7 +33,7 @@ export default class GuitarChordFinder extends React.Component {
       <Layout>
         <SEO title="Ukulele Chord Finder" />
         <div className="UkeChordFinderTitleBox">
-          <h1 className="ChordFinderTitle">UKULELE CHORD FINDER</h1>
+          <h1 className="ChordFinderTitle">UKULELE CHORDS FINDER</h1>
         </div>
 
         <div className="outerBox">

@@ -36,7 +36,7 @@ const NavBar = props => {
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Chord Finder
+                Chords Finder
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
@@ -45,7 +45,7 @@ const NavBar = props => {
                     style={{ fontFamily: "sans-serif", color: "black" }}
                     to="/guitar-chord-finder/"
                   >
-                    Guitar Chord Finder
+                    Guitar Chords Finder
                   </Link>
                 </DropdownItem>
                 <DropdownItem>
@@ -54,7 +54,7 @@ const NavBar = props => {
                     style={{ fontFamily: "sans-serif", color: "black" }}
                     to="/ukulele-chord-finder/"
                   >
-                    Ukelele Chord Finder
+                    Ukelele Chords Finder
                   </Link>
                 </DropdownItem>
               </DropdownMenu>
