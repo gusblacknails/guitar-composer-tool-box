@@ -6,7 +6,10 @@ const IndexPage = () => (
   <React.Fragment>
     {/* <NavBar /> */}
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="Guitar Composers Tool Box"
+        description="Tools for guitar and ukulele composers such as chords finders or scales harmonizer"
+      />
 
       <Home />
       {/* <Harmonizer /> */}

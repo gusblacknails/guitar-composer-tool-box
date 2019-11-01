@@ -30,3 +30,12 @@
   flex-direction: column;
   text-align: center;
 }
+#out {
+  height: 55rem;
+}
+#middle {
+  height: 54rem;
+}
+#in {
+  height: 53rem;
+}

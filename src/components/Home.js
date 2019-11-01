@@ -11,7 +11,6 @@ import Typography from "@material-ui/core/Typography"
 import { red } from "@material-ui/core/colors"
 
 import "../css/home.css"
-// import { url } from "inspector"
 
 const useStyles = makeStyles(theme => ({
   card: {

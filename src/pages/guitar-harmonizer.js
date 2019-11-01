@@ -41,13 +41,20 @@ export default class GuitarHarmonizer extends React.Component {
         <div className="ChordFinderTitleBox">
           <h1 className="ChordFinderTitle">GUITAR SCALE HARMONIZER</h1>
         </div>
+        <div className="outerBox" id="out">
+          <div className="middleBox" id="middle">
+            <div className="innerBox" id="in">
+              <div className="selectorBox">
+                <ScaleList currentScale={this.callbackCurrentScale} />
+              </div>
 
-        <ScaleList currentScale={this.callbackCurrentScale} />
-
-        <Harmonizer
-          root={this.state.currentRoot}
-          scale={this.state.currentScale}
-        />
+              <Harmonizer
+                root={this.state.currentRoot}
+                scale={this.state.currentScale}
+              />
+            </div>
+          </div>
+        </div>
       </Layout>
     )
   }
