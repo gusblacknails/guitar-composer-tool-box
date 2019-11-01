@@ -129,13 +129,13 @@ export default function Home() {
         <h2 className="">Articles</h2>
       </div>
       <div className="articleCardBoxes">
-        <Link to="/triads_1" className="link">
+        <Link to="/triads-why-are-important" className="link">
           <Card className={classes.card}>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
                 image={require("../images/triads_1.jpg")}
-                title="Triads, why they are so important?"
+                title="Triads, why are they so important?"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">

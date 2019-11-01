@@ -68,7 +68,7 @@ const NavBar = props => {
                   {" "}
                   <Link
                     style={{ fontFamily: "sans-serif", color: "black" }}
-                    to="/triads_1/"
+                    to="/triads-why-are-important/"
                   >
                     Triads, why are they so important?
                   </Link>
