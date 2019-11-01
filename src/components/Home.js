@@ -42,9 +42,12 @@ export default function Home() {
 
   return (
     <React.Fragment>
-      <div className="homeTopImage">
+      <div className="homeTopImage" title="Home title background">
         <div className="vertical-center">
-          <h1 className="homeTitle">Guitar and Ukulele Tools for Composers</h1>
+          <h1 className="homeTitle">
+            Guitar and Ukulele Tools
+            <br /> for Composers
+          </h1>
         </div>
       </div>
       <div className="titleBox">
@@ -58,7 +61,7 @@ export default function Home() {
               subheader="Find the best chord for your needs"
             />
 
-            <div id="chordFinderThumb"></div>
+            <div id="chordFinderThumb" title="Guitar Chords Finder Thumb"></div>
             <CardContent>
               <Typography
                 variant="body2"
@@ -84,7 +87,7 @@ export default function Home() {
               title="Ukulele Chords Finder"
               subheader="Which chord fits better with the last one?"
             />
-            <div id="ukeFinderThumb"></div>
+            <div id="ukeFinderThumb" title="Ukulele Chords Finder Thumb"></div>
             <CardContent>
               <Typography
                 variant="body2"
@@ -109,7 +112,10 @@ export default function Home() {
               title="Guitar Scale Harmonizer"
               subheader="Diatonic chords for the choosen scale"
             />
-            <div id="guitarScaleHarmonizeThumb"></div>
+            <div
+              id="guitarScaleHarmonizeThumb"
+              title="Guitar Scale Harmonizer Thumb"
+            ></div>
             <CardContent>
               <Typography variant="body2" color="textSecondary" component="p">
                 There are <b>many different scales</b>, major, minor, blues,

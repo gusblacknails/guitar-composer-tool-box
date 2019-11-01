@@ -32,7 +32,10 @@ export default class GuitarChordFinder extends React.Component {
     return (
       <Layout>
         <SEO title="Ukulele Chord Finder" />
-        <div className="UkeChordFinderTitleBox">
+        <div
+          className="UkeChordFinderTitleBox"
+          title="Ukulele Chords Finder title background"
+        >
           <h1 className="ChordFinderTitle">UKULELE CHORDS FINDER</h1>
         </div>
 
@@ -50,7 +53,7 @@ export default class GuitarChordFinder extends React.Component {
                   <div>
                     <div className="">
                       <h2 className="titles" id="chordByFred">
-                        Ukelele Chords filtered by fret
+                        Ukulele Chords filtered by fret
                       </h2>
                       <Nouislider
                         pips={{
