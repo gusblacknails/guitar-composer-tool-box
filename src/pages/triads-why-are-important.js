@@ -7,7 +7,7 @@ import "../css/article.css"
 const SecondPage = () => (
   <React.Fragment>
     <Layout>
-      <SEO title="Triads" />
+      <SEO title="Triads, why are they so important?" />
       <div className="articleBox">
         <h1>Triads, why are they so important?</h1>
         <p>
