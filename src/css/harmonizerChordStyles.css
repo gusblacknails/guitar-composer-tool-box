@@ -14,7 +14,7 @@
   text-anchor: middle;
 } */
 .harmonizerChordbox {
-  width: 5em;
+  width: 7em;
 }
 @media (min-width: 600px) {
   .harmonizerChordbox {
