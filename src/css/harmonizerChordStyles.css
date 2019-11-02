@@ -32,11 +32,13 @@
   text-align: center;
 }
 #out {
-  height: 55rem;
+  height: auto;
 }
 #middle {
-  height: 54rem;
+  padding-bottom: 1.5em;
+  height: auto;
 }
 #in {
-  height: 53rem;
+  padding-bottom: 1em;
+  height: auto;
 }
