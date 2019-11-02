@@ -83,7 +83,7 @@ class Harmonizer extends React.Component {
     return out
   }
   extractType(type) {
-    if (type === "") {
+    if (type == "") {
       return "major"
     }
     if (type === "m") {
@@ -171,7 +171,15 @@ class Harmonizer extends React.Component {
     //c#: lydian
     //d#: major, ionian, lydian, mixolydian, harmonicminor, melodicminor,
     //g#: melodicminor, harmonicminor, lydian, ionian, major
-    let scaleToHarmonize = teoria.scale(scale_root, props.scale)
+    console.log("SCALE_ROOT:", props.scale)
+    let scaleText
+    if (props.scale === "Major") {
+      scaleText = "major"
+    } else {
+      scaleText = props.scale
+    }
+
+    let scaleToHarmonize = teoria.scale(scale_root, scaleText)
 
     let chords = []
     for (let i = 1; i <= scaleToHarmonize.scale.length; i++) {
