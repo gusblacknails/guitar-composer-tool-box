@@ -35,10 +35,12 @@
   height: auto;
 }
 #middle {
-  padding-bottom: 1.5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
   height: auto;
 }
 #in {
+  padding-top: 0.1em;
   padding-bottom: 1em;
   height: auto;
 }

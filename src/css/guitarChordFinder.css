@@ -157,7 +157,16 @@ form {
 }
 
 .chordGrade {
+  margin-top: 1em;
+  color: white;
+  background: #ffffff12;
   font-family: monospace;
+}
+.chordName {
+  /* color: white; */
+
+  background: #ffffff2b;
+  font-weight: 300;
 }
 
 .outerBox {
