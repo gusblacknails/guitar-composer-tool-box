@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import TextField from "@material-ui/core/TextField"
 import MenuItem from "@material-ui/core/MenuItem"
 import Button from "@material-ui/core/Button"
+
 import "../css/nav.css"
 
 const notes = [
@@ -108,55 +109,59 @@ export default function ScaleList(props) {
   }
 
   return (
-    <form values={values} handleChangeForm={handleChange}>
-      <div className={classes.root}>
-        <TextField
-          select
-          className={clsx(classes.margin, classes.textField)}
-          variant="outlined"
-          label="Select Root Note"
-          value={values.notes}
-          onChange={handleChange("notes")}
-          InputProps={
-            {
-              // startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
-            }
-          }
-        >
-          {notes.map(option => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField
-          select
-          className={clsx(classes.margin, classes.textField)}
-          variant="outlined"
-          label="Select Scale"
-          value={values.scale}
-          onChange={handleChange("scale")}
-          InputProps={
-            {
-              // startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
-            }
-          }
-        >
-          {scaleNames.map(option => (
-            <MenuItem key={option} value={option}>
-              {option}
-            </MenuItem>
-          ))}
-        </TextField>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          onClick={sendData}
-        >
-          Harmonize Scale
-        </Button>
+    <div className="harmonizerSelectorBox">
+      <div className="harmonizerSelectorSubBox">
+        <form values={values} handleChangeForm={handleChange}>
+          <div className={classes.root}>
+            <TextField
+              select
+              className={clsx(classes.margin, classes.textField)}
+              variant="outlined"
+              label="Select Root Note"
+              value={values.notes}
+              onChange={handleChange("notes")}
+              InputProps={
+                {
+                  // startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
+                }
+              }
+            >
+              {notes.map(option => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField
+              select
+              className={clsx(classes.margin, classes.textField)}
+              variant="outlined"
+              label="Select Scale"
+              value={values.scale}
+              onChange={handleChange("scale")}
+              InputProps={
+                {
+                  // startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
+                }
+              }
+            >
+              {scaleNames.map(option => (
+                <MenuItem key={option} value={option}>
+                  {option}
+                </MenuItem>
+              ))}
+            </TextField>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.button}
+              onClick={sendData}
+            >
+              Harmonize Scale
+            </Button>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   )
 }

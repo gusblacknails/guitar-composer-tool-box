@@ -2,10 +2,13 @@ import React from "react"
 import ScaleList from "../components/HarmonizerListNav"
 import Harmonizer from "../components/Harmonizer"
 import Layout from "../components/layout"
+import SwitchesGroup from "../components/switcherButtons"
+import "../css/harmonizerChordStyles.css"
 // import Nouislider from "nouislider-react"
 // import "nouislider/distribute/nouislider.css"
 // import ScaleRender from "../components/ScaleRender"
-import "../css/harmonizerChordStyles.css"
+
+import "../css/nav.css"
 
 import "../css/guitarChordFinder.css"
 import SEO from "../components/seo"
@@ -16,10 +19,10 @@ export default class GuitarHarmonizer extends React.Component {
     this.state = {
       currentRoot: "C",
       currentScale: "major",
-      currentMaxFret: 12,
-      currentMinFret: 0,
+      variationState: false,
     }
   }
+
   callbackCurrentScale = childData => {
     if (childData) {
       this.setState({
@@ -28,12 +31,18 @@ export default class GuitarHarmonizer extends React.Component {
       })
     }
   }
-  onChangeSlide(data) {
+  callbackVariationState = childData => {
+    console.log("CHILD_DATA:", childData)
+
     this.setState({
-      currentMaxFret: Math.round(data[1]),
-      currentMinFret: Math.round(data[0]),
+      variationState: childData,
     })
+    // this.setState(prevState => ({
+    //   variationState: !prevState.variationState,
+    // }))
+    console.log("SWITH_STATE:", this.state.variationState)
   }
+
   render() {
     return (
       <Layout>
@@ -46,11 +55,17 @@ export default class GuitarHarmonizer extends React.Component {
             <div className="innerBox" id="in">
               <div className="selectorBox">
                 <ScaleList currentScale={this.callbackCurrentScale} />
+                <div className="switchesBox">
+                  <SwitchesGroup
+                    variationsState={this.callbackVariationState}
+                  />
+                </div>
               </div>
 
               <Harmonizer
                 root={this.state.currentRoot}
                 scale={this.state.currentScale}
+                variations={this.state.variationState}
               />
             </div>
           </div>

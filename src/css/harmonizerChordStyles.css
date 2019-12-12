@@ -44,3 +44,18 @@
   padding-bottom: 1em;
   height: auto;
 }
+.extraChordsBox1 {
+  display: contents;
+}
+.extraChordsBox2 {
+  display: none;
+}
+.variation1 {
+  background: #9696965c;
+}
+.MuiSwitch-colorSecondary.Mui-checked {
+  color: #d9c059 !important;
+}
+.MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
+  background-color: #d9c059 !important;
+}

@@ -4,3 +4,41 @@
   padding-left: 1em;
   justify-content: center;
 }
+
+@media (min-width: 767px) {
+  .selectorBox {
+    height: 6em !important;
+  }
+}
+
+.makeStyles-root-200 {
+  padding-left: 0 !important;
+}
+
+.switchesBox {
+  display: flex;
+  justify-content: space-around;
+}
+
+.MuiTypography-body1 {
+  font-size: 0.8rem !important;
+}
+.MuiFormControlLabel-root {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  padding-right: 0.6em !important;
+}
+.MuiTypography-body1 {
+  color: #4c4c4c;
+}
+@media (min-width: 752px) {
+  .MuiFormControlLabel-root {
+    position: relative;
+    left: 0.7rem;
+  }
+}

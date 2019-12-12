@@ -6,7 +6,7 @@ import "../css/what-is-this-about.css"
 const whatIsThisAbout = () => (
   <React.Fragment>
     <Layout>
-      <SEO title="Triads" />
+      <SEO title="What is tihs abput?" />
       <div className="homeBox">
         <div className="textContent">
           <p>
