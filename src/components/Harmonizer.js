@@ -226,7 +226,7 @@ class Harmonizer extends React.Component {
         )
 
         currentGrade += 1
-        console.log("out chord OO:", root, type, chord.positions.length)
+        // console.log("out chord OO:", root, type, chord.positions.length)
       })
     }
 
@@ -312,29 +312,29 @@ class Harmonizer extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log("PROPS WillReceiveProps:", newProps, this.state.extraChordsBox)
+    // console.log("PROPS WillReceiveProps:", newProps, this.state.extraChordsBox)
     if (newProps.variations === true) {
       this.setState({ extraChordsBox: "extraChordsBox1" }, () => {
         this.harmonizeScale(newProps)
       })
-      console.log(
-        "RECIEVE WillReceiveProps state:",
-        newProps,
-        this.state.extraChordsBox
-      )
+      // console.log(
+      //   "RECIEVE WillReceiveProps state:",
+      //   newProps,
+      //   this.state.extraChordsBox
+      // )
     } else {
       this.setState({ extraChordsBox: "extraChordsBox2" }, () => {
         this.harmonizeScale(newProps)
       })
-      console.log(
-        "RECIEVE WillReceiveProps_ELSE state:",
-        newProps,
-        this.state.extraChordsBox
-      )
+      // console.log(
+      //   "RECIEVE WillReceiveProps_ELSE state:",
+      //   newProps,
+      //   this.state.extraChordsBox
+      // )
     }
   }
   componentWillMount() {
-    console.log("PROPS WILLMOUNT:", this.props)
+    // console.log("PROPS WILLMOUNT:", this.props)
 
     this.harmonizeScale(this.props)
   }

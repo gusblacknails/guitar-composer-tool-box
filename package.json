@@ -32,6 +32,7 @@
     "react-dom": "^16.10.2",
     "react-guitar-chords": "^1.0.0",
     "react-helmet": "^5.2.1",
+    "react-p5": "^1.3.2",
     "reactstrap": "^8.0.1",
     "teoria": "^2.5.0",
     "teoria-chord-progression": "^1.0.0",

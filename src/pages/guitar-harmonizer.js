@@ -1,9 +1,12 @@
 import React from "react"
+import Sketch from "react-p5"
 import ScaleList from "../components/HarmonizerListNav"
 import Harmonizer from "../components/Harmonizer"
 import Layout from "../components/layout"
+import Fretboard from "../components/P5Fretboard"
 import SwitchesGroup from "../components/switcherButtons"
 import "../css/harmonizerChordStyles.css"
+
 // import Nouislider from "nouislider-react"
 // import "nouislider/distribute/nouislider.css"
 // import ScaleRender from "../components/ScaleRender"
@@ -61,7 +64,7 @@ export default class GuitarHarmonizer extends React.Component {
                   />
                 </div>
               </div>
-
+              <Fretboard />
               <Harmonizer
                 root={this.state.currentRoot}
                 scale={this.state.currentScale}
