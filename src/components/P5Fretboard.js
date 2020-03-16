@@ -2,10 +2,11 @@ import React, { Component } from "react"
 import Sketch from "react-p5"
 
 export default class Fretboard extends Component {
-  frets = 18
+  frets = 12
   fretboardHeigth = 200
   fretboardWidth = 1000
   numberOfStrings = 6
+  dots = true
   sc = this.fretboardWidth
   mn = 17.817
   scale = parseFloat(this.sc)
@@ -334,35 +335,76 @@ export default class Fretboard extends Component {
   setup = (p5, canvasParentRef) => {
     p5.createCanvas(
       this.fretboardWidth - this.fretboardWidth / 3.6,
-      this.fretboardHeigth,
-      p5.WEBGL
+      this.fretboardHeigth
+      // p5.windowWidth / 8,
+      // p5.windowHeight / 5.9
+      // ,p5.WEBGL
     ).parent(canvasParentRef) // use parent to render canvas in this ref (without that p5 render this canvas outside your component)
-    p5.background(100)
+    p5.background("brown")
+
     p5.noLoop()
   }
   draw = p5 => {
-    p5.translate(-p5.width / 2, -p5.height / 2, 0)
+    // p5.translate(-p5.width / 2, -p5.height / 2, 0)
 
-    function drawFrets(x, y, z, fretHeigth, fretboardHeigth) {
+    function drawFrets(x, y, z, fretHeigth, fretboardHeigth, fretNumber) {
+      // FRET SQUARES
       // p5.noStroke()
-
       // p5.fill(255, 204, 0)
-
       // p5.rect(y, z, x, fretHeigth)
+
       //INSTRUMENT FRETS
-      p5.stroke(50)
-      p5.fill("#A6A6A6")
-      // p5.pointLight(0, 255, 0, 0, 50, 50)
-      p5.rect(y, 0, 3, fretboardHeigth)
+      let shadow = p5.color("black")
+      shadow.setAlpha(100)
+      p5.stroke(shadow)
+      p5.strokeWeight(1)
+      let squareColor = p5.color("black")
+      squareColor.setAlpha(100)
+      // p5.noStroke()
+      console.log("FRETNUMBER:", fretNumber)
+      if (fretNumber === 0) {
+        p5.fill("white")
+        p5.rect(y, 0, 10, fretboardHeigth)
+      } else {
+        p5.fill("#A6A6A6")
+        p5.rect(y, 0, 3, fretboardHeigth)
+        p5.stroke(squareColor)
+        p5.strokeWeight(0.8)
+        p5.line(y + 2, 2, y + 2, fretboardHeigth - 2)
+      }
+
+      p5.noStroke()
     }
+    function drawDots(fretboardHeigth, fretNumber, positionWidth, fretWidth) {
+      if (
+        fretNumber === 3 ||
+        fretNumber === 5 ||
+        fretNumber === 7 ||
+        fretNumber === 9
+      ) {
+        p5.fill("white")
+        p5.circle(positionWidth - fretWidth / 2, fretboardHeigth / 2, 10)
+      }
+      if (fretNumber === 12) {
+        p5.fill("white")
+        p5.circle(positionWidth - fretWidth / 2, fretboardHeigth / 3, 10)
+        p5.circle(
+          positionWidth - fretWidth / 2,
+          fretboardHeigth - fretboardHeigth / 3,
+          10
+        )
+      }
+    }
+
     // NOTE: Do not use setState in draw function or in functions that is executed in draw function... pls use normal variables or class properties for this purposes
 
     let positionHeigth = this.fretHeigth
+
     for (var i = 0; i < this.numberOfStrings; i += 1) {
       // let positionWidth = this.fr1
       let positionWidth = 0
-
-      for (var e = 0; e < this.frets; e += 1) {
+      let fretNumber = 0
+      for (var e = 0; e < this.frets + 1; e += 1) {
         let fretWidth = this.fr1
         if (e === 1) {
           fretWidth = this.fr2
@@ -439,10 +481,12 @@ export default class Fretboard extends Component {
           positionWidth,
           positionHeigth,
           this.fretHeigth,
-          this.fretboardHeigth
+          this.fretboardHeigth,
+          fretNumber
         )
-
+        drawDots(this.fretboardHeigth, fretNumber, positionWidth, fretWidth)
         positionWidth += fretWidth
+        fretNumber += 1
       }
 
       positionHeigth += this.fretHeigth
