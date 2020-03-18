@@ -2,10 +2,19 @@ import React, { Component } from "react"
 import Sketch from "react-p5"
 
 export default class Fretboard extends Component {
-  frets = 12
+  frets = 22
   fretboardHeigth = 200
   fretboardWidth = 1000
   numberOfStrings = 6
+  stringSpinColor = "#E9E3DF"
+  firstStringsSpinColor = "#A6A6A6"
+  stringSpinShadow = "#222222"
+  nutColor = "white"
+  fretsColor = "#A6A6A6"
+  electricGuitarStrings = true
+  neckColor = "#534441"
+  tuning = ["e", "b", "g", "d", "a", "e"]
+
   dots = true
   sc = this.fretboardWidth
   mn = 17.817
@@ -340,14 +349,23 @@ export default class Fretboard extends Component {
       // p5.windowHeight / 5.9
       // ,p5.WEBGL
     ).parent(canvasParentRef) // use parent to render canvas in this ref (without that p5 render this canvas outside your component)
-    p5.background("brown")
+    p5.background(this.neckColor)
 
     p5.noLoop()
   }
   draw = p5 => {
     // p5.translate(-p5.width / 2, -p5.height / 2, 0)
 
-    function drawFrets(x, y, z, fretHeigth, fretboardHeigth, fretNumber) {
+    function drawFrets(
+      x,
+      y,
+      z,
+      fretHeigth,
+      fretboardHeigth,
+      fretNumber,
+      nutColor,
+      fretsColor
+    ) {
       // FRET SQUARES
       // p5.noStroke()
       // p5.fill(255, 204, 0)
@@ -361,12 +379,11 @@ export default class Fretboard extends Component {
       let squareColor = p5.color("black")
       squareColor.setAlpha(100)
       // p5.noStroke()
-      console.log("FRETNUMBER:", fretNumber)
       if (fretNumber === 0) {
-        p5.fill("white")
+        p5.fill(nutColor)
         p5.rect(y, 0, 10, fretboardHeigth)
       } else {
-        p5.fill("#A6A6A6")
+        p5.fill(fretsColor)
         p5.rect(y, 0, 3, fretboardHeigth)
         p5.stroke(squareColor)
         p5.strokeWeight(0.8)
@@ -375,12 +392,20 @@ export default class Fretboard extends Component {
 
       p5.noStroke()
     }
+
+    function drawNotes(fretboardHeigth, positionWidth, fretWidth) {
+      p5.fill("white")
+      p5.circle(positionWidth - fretWidth / 2, fretboardHeigth / 2, 10)
+    }
     function drawDots(fretboardHeigth, fretNumber, positionWidth, fretWidth) {
       if (
         fretNumber === 3 ||
         fretNumber === 5 ||
         fretNumber === 7 ||
-        fretNumber === 9
+        fretNumber === 9 ||
+        fretNumber === 15 ||
+        fretNumber === 17 ||
+        fretNumber === 19
       ) {
         p5.fill("white")
         p5.circle(positionWidth - fretWidth / 2, fretboardHeigth / 2, 10)
@@ -482,9 +507,15 @@ export default class Fretboard extends Component {
           positionHeigth,
           this.fretHeigth,
           this.fretboardHeigth,
-          fretNumber
+          fretNumber,
+          this.nutColor,
+          this.fretsColor
         )
-        drawDots(this.fretboardHeigth, fretNumber, positionWidth, fretWidth)
+        // NECK DOTS
+        if (this.dots) {
+          drawDots(this.fretboardHeigth, fretNumber, positionWidth, fretWidth)
+        }
+
         positionWidth += fretWidth
         fretNumber += 1
       }
@@ -495,13 +526,27 @@ export default class Fretboard extends Component {
     for (var i = 0; i < this.numberOfStrings; i += 1) {
       //INSTRUMENT STRINGS
 
-      p5.fill("#222222")
+      p5.fill(this.stringSpinShadow)
       p5.rect(
         0,
         positionHeigth - this.fretHeigth / 2,
         this.fretboardWidth,
         1 + i / 3
       )
+      if (this.electricGuitarStrings) {
+        if (i > 1) {
+          for (var spin = 0; spin < this.scale; spin += 1.2) {
+            p5.fill(this.stringSpinColor)
+            p5.rect(spin, positionHeigth - this.fretHeigth / 2, 1, 1 + i / 3)
+          }
+        } else {
+          for (var spin = 0; spin < this.scale; spin += 1.1) {
+            p5.fill(this.firstStringsSpinColor)
+            p5.rect(spin, positionHeigth - this.fretHeigth / 2, 1, 1 + i / 3)
+          }
+        }
+      }
+
       positionHeigth += this.fretHeigth
     }
   }
