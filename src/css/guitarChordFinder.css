@@ -10,6 +10,10 @@ body {
   background: gainsboro;
   overflow-x: hidden;
 }
+.infoBox {
+  text-align: center;
+  padding: 1em 1em 0 1em;
+}
 .underH1 {
   display: flex;
   justify-content: space-around;

@@ -80,6 +80,10 @@ export default class GuitarChordFinder extends React.Component {
                       <h2 className="titles" id="chordByFred">
                         Guitar Chords filtered by fret:
                       </h2>
+                      <div className='infoBox'>
+                      <span >Move the sliders for selecting first and last frets that will be shown</span>
+                      </div>
+                      
                       <Nouislider
                         pips={{
                           mode: "values",
