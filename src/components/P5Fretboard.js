@@ -4,7 +4,8 @@ import Sketch from "react-p5"
 export default class Fretboard extends Component {
   frets = 22
   fretboardHeigth = 200
-  fretboardWidth = window.innerWidth
+  // "window" is not available during server side rendering.
+  // fretboardWidth = window.innerWidth
   numberOfStrings = 6
   stringSpinColor = "#E9E3DF"
   firstStringsSpinColor = "#A6A6A6"
