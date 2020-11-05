@@ -135,6 +135,7 @@ class ChordsFinder extends React.Component {
             <div className="chordFlex">{this.state.barre}</div>
           </div>
         )}
+        
       </div>
     )
   }

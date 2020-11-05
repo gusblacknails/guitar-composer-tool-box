@@ -64,7 +64,7 @@ export default class GuitarHarmonizer extends React.Component {
                   />
                 </div>
               </div>
-              <Fretboard />
+              {/* <Fretboard /> */}
               <Harmonizer
                 root={this.state.currentRoot}
                 scale={this.state.currentScale}

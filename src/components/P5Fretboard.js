@@ -4,16 +4,19 @@ import Sketch from "react-p5"
 export default class Fretboard extends Component {
   frets = 22
   fretboardHeigth = 200
-  fretboardWidth = 1000
+  fretboardWidth = window.innerWidth
   numberOfStrings = 6
   stringSpinColor = "#E9E3DF"
   firstStringsSpinColor = "#A6A6A6"
   stringSpinShadow = "#222222"
   nutColor = "white"
   fretsColor = "#A6A6A6"
+  noteColor = "red"
   electricGuitarStrings = true
   neckColor = "#534441"
   tuning = ["e", "b", "g", "d", "a", "e"]
+  notes = []
+  lastFretWidth
 
   dots = true
   sc = this.fretboardWidth
@@ -393,9 +396,20 @@ export default class Fretboard extends Component {
       p5.noStroke()
     }
 
-    function drawNotes(fretboardHeigth, positionWidth, fretWidth) {
-      p5.fill("white")
-      p5.circle(positionWidth - fretWidth / 2, fretboardHeigth / 2, 10)
+    function drawNotes(
+      noteColor,
+      positionHeigth,
+      positionWidth,
+      fretWidth,
+      fretHeigth,
+      lastFretWidth
+    ) {
+      p5.fill(noteColor)
+      p5.circle(
+        positionWidth - fretWidth / 2 + 1,
+        positionHeigth - fretHeigth / 2,
+        lastFretWidth
+      )
     }
     function drawDots(fretboardHeigth, fretNumber, positionWidth, fretWidth) {
       if (
@@ -429,6 +443,7 @@ export default class Fretboard extends Component {
       // let positionWidth = this.fr1
       let positionWidth = 0
       let fretNumber = 0
+
       for (var e = 0; e < this.frets + 1; e += 1) {
         let fretWidth = this.fr1
         if (e === 1) {
@@ -500,7 +515,7 @@ export default class Fretboard extends Component {
         if (e === 23) {
           fretWidth = this.fr24
         }
-
+        this.lastFretWidth = fretWidth
         drawFrets(
           fretWidth,
           positionWidth,
@@ -511,6 +526,7 @@ export default class Fretboard extends Component {
           this.nutColor,
           this.fretsColor
         )
+
         // NECK DOTS
         if (this.dots) {
           drawDots(this.fretboardHeigth, fretNumber, positionWidth, fretWidth)
@@ -523,9 +539,8 @@ export default class Fretboard extends Component {
       positionHeigth += this.fretHeigth
     }
     positionHeigth = this.fretHeigth
+    //INSTRUMENT STRINGS
     for (var i = 0; i < this.numberOfStrings; i += 1) {
-      //INSTRUMENT STRINGS
-
       p5.fill(this.stringSpinShadow)
       p5.rect(
         0,
@@ -545,6 +560,98 @@ export default class Fretboard extends Component {
             p5.rect(spin, positionHeigth - this.fretHeigth / 2, 1, 1 + i / 3)
           }
         }
+      }
+
+      positionHeigth += this.fretHeigth
+    }
+
+    positionHeigth = this.fretHeigth
+    for (var i = 0; i < this.numberOfStrings; i += 1) {
+      let positionWidth = 0
+      console.log("this", this["fr" + i])
+      for (var e = 0; e < this.frets + 1; e += 1) {
+        let fretWidth = this.fr1
+
+        if (e === 1) {
+          fretWidth = this.fr2
+        }
+        if (e === 2) {
+          fretWidth = this.fr3
+        }
+        if (e === 3) {
+          fretWidth = this.fr4
+        }
+        if (e === 4) {
+          fretWidth = this.fr5
+        }
+        if (e === 5) {
+          fretWidth = this.fr6
+        }
+        if (e === 6) {
+          fretWidth = this.fr7
+        }
+        if (e === 7) {
+          fretWidth = this.fr8
+        }
+        if (e === 8) {
+          fretWidth = this.fr9
+        }
+        if (e === 9) {
+          fretWidth = this.fr10
+        }
+        if (e === 10) {
+          fretWidth = this.fr11
+        }
+        if (e === 11) {
+          fretWidth = this.fr12
+        }
+        if (e === 12) {
+          fretWidth = this.fr13
+        }
+        if (e === 13) {
+          fretWidth = this.fr14
+        }
+        if (e === 14) {
+          fretWidth = this.fr15
+        }
+        if (e === 15) {
+          fretWidth = this.fr16
+        }
+        if (e === 16) {
+          fretWidth = this.fr17
+        }
+        if (e === 17) {
+          fretWidth = this.fr18
+        }
+        if (e === 18) {
+          fretWidth = this.fr19
+        }
+        if (e === 19) {
+          fretWidth = this.fr20
+        }
+        if (e === 20) {
+          fretWidth = this.fr21
+        }
+        if (e === 21) {
+          fretWidth = this.fr22
+        }
+        if (e === 22) {
+          fretWidth = this.fr23
+        }
+        if (e === 23) {
+          fretWidth = this.fr24
+        }
+
+        drawNotes(
+          this.noteColor,
+          positionHeigth,
+          positionWidth,
+          fretWidth,
+          this.fretHeigth,
+          this.lastFretWidth - 3
+        )
+
+        positionWidth += fretWidth
       }
 
       positionHeigth += this.fretHeigth

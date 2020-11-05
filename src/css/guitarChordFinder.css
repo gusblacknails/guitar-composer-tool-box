@@ -14,14 +14,12 @@ body {
 .titles {
   background: rgb(217, 192, 89);
   /* color: rgb(217, 192, 89); */
-  font-size: 1.2em;
-}
-@media (min-width: 767px) {
-  .titles {
-    font-size: 1.5em;
-  }
+  font-size: 1em;
 }
 
+.textBox {
+  padding: 2rem;
+}
 .mainTitle {
   letter-spacing: -1px;
   font-family: Anton, sans-serif;
@@ -141,18 +139,17 @@ form {
   /* opacity: 0.5; */
 }
 @media (min-width: 767px) {
+  .textBox {
+    padding: 2rem 5rem 0rem 5rem;
+  }
+  .titles {
+    font-size: 1.5em;
+  }
   .ChordFinderTitleBox {
     height: 20vh;
   }
   .UkeChordFinderTitleBox {
     height: 20vh;
-  }
-}
-
-@media (min-width: 767px) {
-  .ChordFinderTitle {
-    font-size: 4em !important;
-    padding-bottom: 0.2em;
   }
 }
 
@@ -188,6 +185,10 @@ form {
   margin: -1em 0em;
 }
 @media (min-width: 767px) {
+  .ChordFinderTitle {
+    font-size: 4em !important;
+    padding-bottom: 0.2em;
+  }
   .outerBox {
     padding: 1em;
     border-radius: 30px;
