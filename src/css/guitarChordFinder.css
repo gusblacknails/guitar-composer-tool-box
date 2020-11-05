@@ -10,7 +10,21 @@ body {
   background: gainsboro;
   overflow-x: hidden;
 }
-
+.underH1 {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 300;
+  font-family: Anton, sans-serif;
+  text-align: center;
+  color: white !important;
+  text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+  /* padding-top: 0.2em; */
+  height: 1.5em;
+  position: relative;
+  top: -140px;
+  padding: 1em;
+  font-size: 13px;
+}
 .titles {
   background: rgb(217, 192, 89);
   /* color: rgb(217, 192, 89); */
@@ -132,13 +146,25 @@ form {
 .ChordFinderTitleBox {
   background-image: url("../images/navBackground.png");
   /* opacity: 0.5; */
-  height: 8vh;
+  height: 10vh;
 }
 .UkeChordFinderTitleBox {
   background-image: url("../images/ukeBackground.png");
   /* opacity: 0.5; */
 }
+@media (max-width: 359px) {
+  .underH1 {
+    top: -135px;
+  }
+  .ChordFinderTitleBox {
+    height: 11vh;
+  }
+}
 @media (min-width: 767px) {
+  .underH1 {
+    font-size: 19px;
+    top: -107px;
+  }
   .textBox {
     padding: 2rem 5rem 0rem 5rem;
   }
@@ -146,7 +172,7 @@ form {
     font-size: 1.5em;
   }
   .ChordFinderTitleBox {
-    height: 20vh;
+    height: 14vh;
   }
   .UkeChordFinderTitleBox {
     height: 20vh;
@@ -201,17 +227,22 @@ form {
   .innerBox {
     border-radius: 30px;
   }
-}
-.noUi-target {
-  border: 2px solid #d9c059 !important;
-}
-@media (min-width: 767px) {
+  .UkeChordFinderTitleBox {
+    height: 4em;
+  }
   .selectorBox {
     height: 3em;
   }
 }
-@media (max-width: 767px) {
-  .UkeChordFinderTitleBox {
-    height: 4em;
+.noUi-target {
+  border: 2px solid #d9c059 !important;
+}
+
+@media (min-width: 1024px) {
+  .ChordFinderTitleBox {
+    height: 19vh;
+  }
+  .underH1 {
+    top: -72px;
   }
 }
