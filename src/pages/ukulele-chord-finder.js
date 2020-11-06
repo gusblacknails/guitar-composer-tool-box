@@ -1,17 +1,22 @@
 import React from "react"
-import OutlinedInputAdornments from "../components/ChordListNav"
-import Nouislider from "nouislider-react"
-import UkeChordsFinder from "../components/UkeFinder"
+// import OutlinedInputAdornments from "../components/ChordListNav"
+// import Nouislider from "nouislider-react"
+// import UkeChordsFinder from "../components/UkeFinder"
 import "nouislider/distribute/nouislider.css"
 import "../css/guitarChordFinder.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import loadable from '@loadable/component'
+
+const UkeChordsFinder = loadable(() => import('../components/UkeFinder'))
+const Nouislider = loadable(() => import("nouislider-react"))
+const OutlinedInputAdornments = loadable(() => import("../components/ChordListNav"))
 
 export default class GuitarChordFinder extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentChord: "C",
+      currentChord: 'none',
       currentMaxFret: 12,
       currentMinFret: 0,
     }
@@ -50,7 +55,7 @@ export default class GuitarChordFinder extends React.Component {
 
               {this.state.currentChord.length > 0 && (
                 <React.Fragment>
-                  <div>
+                  <div className="ukeMainBox">
                     <div className="">
                       <h2 className="titles" id="chordByFred">
                         Ukulele Chords filtered by fret

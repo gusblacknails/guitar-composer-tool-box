@@ -25,7 +25,7 @@ body {
   /* padding-top: 0.2em; */
   height: 1.5em;
   position: relative;
-  top: -140px;
+  top: -152px;
   padding: 1em;
   font-size: 13px;
 }
@@ -73,8 +73,8 @@ body {
 }
 .chordFilteredBox {
   width: 100%;
-  height: 90vh;
-  overflow-y: scroll;
+  /* height: 90vh; */
+  /* overflow-y: scroll; */
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   margin: 1em 0;
@@ -155,10 +155,11 @@ form {
 .UkeChordFinderTitleBox {
   background-image: url("../images/ukeBackground.png");
   /* opacity: 0.5; */
+  height: 6vh;
 }
 @media (max-width: 359px) {
   .underH1 {
-    top: -135px;
+    top: -147px;
   }
   .ChordFinderTitleBox {
     height: 11vh;
@@ -167,7 +168,7 @@ form {
 @media (min-width: 767px) {
   .underH1 {
     font-size: 19px;
-    top: -107px;
+    top: -117px;
   }
   .textBox {
     padding: 2rem 5rem 0rem 5rem;
@@ -177,9 +178,6 @@ form {
   }
   .ChordFinderTitleBox {
     height: 14vh;
-  }
-  .UkeChordFinderTitleBox {
-    height: 20vh;
   }
 }
 
@@ -232,7 +230,7 @@ form {
     border-radius: 30px;
   }
   .UkeChordFinderTitleBox {
-    height: 4em;
+    height: 8em;
   }
   .selectorBox {
     height: 3em;
@@ -247,6 +245,6 @@ form {
     height: 19vh;
   }
   .underH1 {
-    top: -72px;
+    top: -102px;
   }
 }

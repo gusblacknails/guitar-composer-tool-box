@@ -51,9 +51,10 @@
   display: flex;
   justify-content: center;
 }
-.filteredChords:hover {
+
+/* .filteredChords:hover {
   overflow: scroll;
-}
+} */
 .filteredChords {
   display: flex;
   flex-direction: row;

@@ -8,6 +8,8 @@
 @media (min-width: 767px) {
   .selectorBox {
     height: 6em !important;
+    position: relative;
+    top: 23px;
   }
 }
 
