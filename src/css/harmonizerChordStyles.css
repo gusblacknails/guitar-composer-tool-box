@@ -16,9 +16,12 @@
 .harmonizerChordbox {
   width: 7em;
 }
+
 @media (min-width: 600px) {
   .harmonizerChordbox {
     width: 10em;
+  }
+  .harmonizer > .selectorBox {
   }
 }
 .harmonizerChordsBox {

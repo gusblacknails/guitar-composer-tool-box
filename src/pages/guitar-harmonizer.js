@@ -6,16 +6,15 @@ import Layout from "../components/layout"
 // import Fretboard from "../components/P5Fretboard"
 // import SwitchesGroup from "../components/switcherButtons"
 import "../css/harmonizerChordStyles.css"
+import "../css/nav.css"
+import "../css/guitarChordFinder.css"
+import SEO from "../components/seo"
 import loadable from '@loadable/component'
 const SwitchesGroup = loadable(() => import('../components/switcherButtons'))
 const Harmonizer = loadable(() => import('../components/Harmonizer'))
 const ScaleList = loadable(() => import('../components/HarmonizerListNav'))
 
 
-import "../css/nav.css"
-
-import "../css/guitarChordFinder.css"
-import SEO from "../components/seo"
 
 export default class GuitarHarmonizer extends React.Component {
   constructor(props) {
@@ -57,14 +56,17 @@ export default class GuitarHarmonizer extends React.Component {
         <div className="outerBox" id="out">
           <div className="middleBox" id="middle">
             <div className="innerBox" id="in">
-              <div className="selectorBox">
-                <ScaleList currentScale={this.callbackCurrentScale} />
-                <div className="switchesBox">
-                  <SwitchesGroup
-                    variationsState={this.callbackVariationState}
-                  />
-                </div>
+              <div className="harmonizer">
+                <div className="selectorBox">
+                  <ScaleList currentScale={this.callbackCurrentScale} />
+                  <div className="switchesBox">
+                    <SwitchesGroup
+                      variationsState={this.callbackVariationState}
+                    />
+                  </div>
               </div>
+              </div>
+             
               {/* <Fretboard /> */}
               <Harmonizer
                 root={this.state.currentRoot}
