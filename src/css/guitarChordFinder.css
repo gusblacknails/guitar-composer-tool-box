@@ -155,7 +155,7 @@ form {
 .UkeChordFinderTitleBox {
   background-image: url("../images/ukeBackground.png");
   /* opacity: 0.5; */
-  height: 6vh;
+  height: 10vh;
 }
 @media (max-width: 359px) {
   .underH1 {

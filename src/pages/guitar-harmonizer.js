@@ -7,9 +7,7 @@ import Layout from "../components/layout"
 import SwitchesGroup from "../components/switcherButtons"
 import "../css/harmonizerChordStyles.css"
 
-// import Nouislider from "nouislider-react"
-// import "nouislider/distribute/nouislider.css"
-// import ScaleRender from "../components/ScaleRender"
+
 
 import "../css/nav.css"
 
