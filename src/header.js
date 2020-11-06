@@ -26,7 +26,7 @@ const NavBar = props => {
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/" className="logo">
           {/* <h1 className="mainTitle">The Guitar Composers ToolBox</h1> */}
-          <img src={require("./images/logo_shadow.png")} className="logo" />
+          <img src={require("./images/logo_shadow.png")} alt="logo site" className="logo" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
