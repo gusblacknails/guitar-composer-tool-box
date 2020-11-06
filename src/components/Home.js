@@ -1,16 +1,23 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Link } from "gatsby"
-import Card from "@material-ui/core/Card"
-import CardHeader from "@material-ui/core/CardHeader"
-import CardMedia from "@material-ui/core/CardMedia"
-import CardContent from "@material-ui/core/CardContent"
-import CardActionArea from "@material-ui/core/CardActions"
-import chordFinderThumb from "../images/chordFinderThumb.jpg"
-import Typography from "@material-ui/core/Typography"
+// import Card from "@material-ui/core/Card"
+// import CardHeader from "@material-ui/core/CardHeader"
+// import CardMedia from "@material-ui/core/CardMedia"
+// import CardContent from "@material-ui/core/CardContent"
+// import CardActionArea from "@material-ui/core/CardActions"
+// import chordFinderThumb from "../images/chordFinderThumb.jpg"
+// import Typography from "@material-ui/core/Typography"
 import { red } from "@material-ui/core/colors"
+import loadable from '@loadable/component'
 
 import "../css/home.css"
+const Card = loadable(() => import("@material-ui/core/Card"))
+const CardHeader = loadable(() => import("@material-ui/core/CardHeader"))
+const CardMedia = loadable(() => import("@material-ui/core/CardMedia"))
+const CardContent = loadable(() => import("@material-ui/core/CardContent"))
+const CardActionArea = loadable(() => import("@material-ui/core/CardActions"))
+const Typography = loadable(() => import("@material-ui/core/Typography"))
 
 const useStyles = makeStyles(theme => ({
   card: {

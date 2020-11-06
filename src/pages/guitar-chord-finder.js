@@ -1,9 +1,7 @@
 import React from "react"
-// import OutlinedInputAdornments from "../components/ChordListNav"
-// import ChordFinder from "../components/ChordFinder"
-// import FilterbyFret from "../components/FilterbyFret"
-// import Nouislider from "nouislider-react"
+
 import Layout from "../components/layout"
+
 // import ScaleRender from "../components/ScaleRender"
 import "nouislider/distribute/nouislider.css"
 import "../css/guitarChordFinder.css"
