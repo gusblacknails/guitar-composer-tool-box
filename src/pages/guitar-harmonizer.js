@@ -1,12 +1,15 @@
 import React from "react"
 // import Sketch from "react-p5"
-import ScaleList from "../components/HarmonizerListNav"
-import Harmonizer from "../components/Harmonizer"
+// import ScaleList from "../components/HarmonizerListNav"
+// import Harmonizer from "../components/Harmonizer"
 import Layout from "../components/layout"
 // import Fretboard from "../components/P5Fretboard"
-import SwitchesGroup from "../components/switcherButtons"
+// import SwitchesGroup from "../components/switcherButtons"
 import "../css/harmonizerChordStyles.css"
-
+import loadable from '@loadable/component'
+const SwitchesGroup = loadable(() => import('../components/switcherButtons'))
+const Harmonizer = loadable(() => import('../components/Harmonizer'))
+const ScaleList = loadable(() => import('../components/HarmonizerListNav'))
 
 
 import "../css/nav.css"
