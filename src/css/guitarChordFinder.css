@@ -25,7 +25,7 @@ body {
   /* padding-top: 0.2em; */
   height: 1.5em;
   position: relative;
-  top: -152px;
+  top: -125px;
   padding: 1em;
   font-size: 13px;
 }
@@ -159,7 +159,7 @@ form {
 }
 @media (max-width: 359px) {
   .underH1 {
-    top: -147px;
+    top: -123px;
   }
   .ChordFinderTitleBox {
     height: 11vh;
@@ -168,7 +168,7 @@ form {
 @media (min-width: 767px) {
   .underH1 {
     font-size: 19px;
-    top: -117px;
+    top: -105px;
   }
   .textBox {
     padding: 2rem 5rem 0rem 5rem;
@@ -216,6 +216,8 @@ form {
   .ChordFinderTitle {
     font-size: 4em !important;
     padding-bottom: 0.2em;
+    position: relative;
+    bottom: 22px;
   }
   .outerBox {
     padding: 1em;
@@ -241,9 +243,9 @@ form {
 }
 
 @media (min-width: 1024px) {
-  .ChordFinderTitleBox {
+  /* .ChordFinderTitleBox {
     height: 19vh;
-  }
+  } */
   .underH1 {
     top: -102px;
   }
