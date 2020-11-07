@@ -42,6 +42,7 @@ export default class GuitarChordFinder extends React.Component {
           title="Ukulele Chords Finder title background"
         >
           <h1 className="ChordFinderTitle">UKULELE CHORDS FINDER</h1>
+          <h2 className="underH1">Ukelele Chords Chart for every root note and chord type</h2>
         </div>
 
         <div className="outerBox">

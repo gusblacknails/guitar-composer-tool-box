@@ -76,7 +76,8 @@ export default class GuitarChordFinder extends React.Component {
               />
               {this.state.currentChord.length > 0 && (
                 <React.Fragment>
-                  {/* <UkeChordsFinder chord={this.state.currentChord} /> */}
+                
+                
                   <ChordFinder chord={this.state.currentChord} />
                   <div className="guitarChordFilteredMainBox">
                     <div className="RangeBox">
@@ -103,6 +104,7 @@ export default class GuitarChordFinder extends React.Component {
                       />
                     </div>
                     <div className="chordFilteredBox">
+                      
                       <FilterbyFret
                         chord={this.state.currentChord}
                         currentMinFret={this.state.currentMinFret}
