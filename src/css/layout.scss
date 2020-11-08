@@ -24,7 +24,7 @@ html {
 
 .bg-light {
   padding: 0 1em;
-
+  height: 65px;
   background-color: $base-color !important;
 }
 .navbar-light .navbar-nav .nav-link {
@@ -38,7 +38,7 @@ html {
   z-index: 1;
 }
 .logo {
-  width: 10em;
+  width: 7em;
   position: relative;
   left: 0px;
   top: 0px;
