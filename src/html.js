@@ -5,11 +5,8 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-        {/* <script
-          data-ad-client="ca-pub-5260980741933208"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script> */}
+        <meta name='keywords' content='guitar chords, ukulele chords, ukelele chords, beginner chords, barre chords, power chords, major, minor, maj7, maj9, maj13, triads, quatriads, add9, chord inversions, maj7b5, maj7#5, m7, m9, m11, m13, m6, madd9, m6add9,chord progressions, chord diagrams, chord chart,  m7b5, m7#5, 7sus4, 11b9, aug, dim, dim7, sus4, sus2'/>
+        <meta name='description' content='Chord finder for guitar and ukulele. Shows all combinations for each type of chord all over the neck. Also has a fret filter in order to show only chords between selected frets. There is also a Guitar Scale Harmonizer that lets you find the chords under the most common scales. Shows triads, quatriads and their possible variations'/>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
