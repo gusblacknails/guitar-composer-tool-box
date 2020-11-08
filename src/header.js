@@ -15,6 +15,7 @@ import {
   DropdownItem,
 } from "reactstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
+import './css/navBar.scss'
 
 const NavBar = props => {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,7 +24,7 @@ const NavBar = props => {
 
   return (
     <div className="">
-      <Navbar color="light" light expand="md">
+      <Navbar  expand="md">
         <NavbarBrand href="/" className="logo">
           {/* <h1 className="mainTitle">The Guitar Composers ToolBox</h1> */}
           <img src={require("./images/logo_shadow.png")} alt="logo site" className="logo" />
