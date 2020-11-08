@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import "../css/article.css"
-import "../css/what-is-this-about.css"
+import "../css/article.scss"
+import "../css/what-is-this-about.scss"
 const whatIsThisAbout = () => (
   <React.Fragment>
     <Layout>

@@ -1,16 +1,13 @@
-/* .chordBox {
-  width: 1em;
-  height: 1em;
-} */
-.chord caption {
-  margin: 4px 0 0 0;
-}
+@import "variables.scss";
 .chordBasic {
   display: flex;
   padding: 1em;
   flex-direction: row;
 
   /* background: #bbb; */
+}
+.chord caption {
+  margin: 4px 0 0 0;
 }
 .chordBasic .chord caption {
   position: relative;
@@ -45,7 +42,7 @@
   text-shadow: rgb(0, 0, 0) 1px 1px 1px;
   padding-top: 0.2em;
   height: 1.5em;
-  background: #d9c059;
+  background: $base-color;
 }
 .chordsBox {
   display: flex;
@@ -65,7 +62,7 @@
   padding-bottom: 0.5em;
 }
 .chord caption {
-  background-color: #d9c059;
+  background-color: $base-color;
   border-radius: 0;
 }
 .chordFlex {

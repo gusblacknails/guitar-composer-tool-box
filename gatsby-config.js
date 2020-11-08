@@ -7,6 +7,7 @@ const cfg = {
     author: `https://github.com/gusblacknails`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-adsense`,
       options: {

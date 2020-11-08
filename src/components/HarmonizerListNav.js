@@ -5,7 +5,7 @@ import TextField from "@material-ui/core/TextField"
 import MenuItem from "@material-ui/core/MenuItem"
 import Button from "@material-ui/core/Button"
 
-import "../css/nav.css"
+import "../css/nav.scss"
 
 const notes = [
   {

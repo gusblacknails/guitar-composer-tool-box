@@ -1,3 +1,4 @@
+@import "variables.scss";
 /* .Chord .Title .Key {
   font-size: 0.2rem !important;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
@@ -57,8 +58,8 @@
   background: #9696965c;
 }
 .MuiSwitch-colorSecondary.Mui-checked {
-  color: #d9c059 !important;
+  color: $base-color !important;
 }
 .MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
-  background-color: #d9c059 !important;
+  background-color: $base-color !important;
 }

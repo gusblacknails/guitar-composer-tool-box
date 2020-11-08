@@ -1,7 +1,7 @@
 import React from "react"
 import "../css/chordictionary.min.css"
 import * as chordictionary from "chordictionary"
-import "../css/chordFinder.css"
+import "../css/chordFinder.scss"
 
 // import { chord } from "tonal-dictionary"
 // import * as Scale from "tonal-scale"

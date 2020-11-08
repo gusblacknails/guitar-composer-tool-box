@@ -1,7 +1,7 @@
 import React from "react"
 import "../css/chordictionary.min.css"
 import * as chordictionary from "chordictionary"
-import "../css/chordFinder.css"
+import "../css/chordFinder.scss"
 
 class UkeChordsFinder extends React.Component {
   constructor(props) {

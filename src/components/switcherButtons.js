@@ -3,7 +3,7 @@ import FormControl from "@material-ui/core/FormControl"
 import FormGroup from "@material-ui/core/FormGroup"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import Switch from "@material-ui/core/Switch"
-import "../css/harmonizerChordStyles.css"
+import "../css/harmonizerChordStyles.scss"
 export default function SwitchesGroup(props) {
   const [state, setState] = React.useState({
     chordVariations: false,

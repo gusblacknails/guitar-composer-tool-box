@@ -1,3 +1,4 @@
+@import "variables.scss";
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -16,21 +17,15 @@ html {
 }
 .layoutBox {
   margin: 0 auto;
-  background-color: #dcdcdc;
-  background-image: url("../images/dark-wall.png");
+  background-color: $background;
+  // background-image: url("../images/dark-wall.png");
   min-height: 92em;
 }
-/* .navBox {
-  background-image: url("../images/navBackground.png");
-  height: 13vh;
-  background-color: #d9c059 !important;
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
-} */
+
 .bg-light {
   padding: 0 1em;
 
-  background-color: #d9c059 !important;
+  background-color: $base-color !important;
 }
 .navbar-light .navbar-nav .nav-link {
   color: white;

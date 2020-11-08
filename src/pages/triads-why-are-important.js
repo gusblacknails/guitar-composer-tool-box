@@ -2,7 +2,7 @@ import React from "react"
 import GuitarChord from "react-guitar-chords"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import "../css/article.css"
+import "../css/article.scss"
 
 const SecondPage = () => (
   <React.Fragment>

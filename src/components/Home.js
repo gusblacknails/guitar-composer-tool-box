@@ -11,7 +11,7 @@ import { Link } from "gatsby"
 import { red } from "@material-ui/core/colors"
 import loadable from '@loadable/component'
 
-import "../css/home.css"
+import "../css/home.scss"
 const Card = loadable(() => import("@material-ui/core/Card"))
 const CardHeader = loadable(() => import("@material-ui/core/CardHeader"))
 const CardMedia = loadable(() => import("@material-ui/core/CardMedia"))

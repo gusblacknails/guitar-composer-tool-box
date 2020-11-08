@@ -1,6 +1,6 @@
 import React from "react"
 import "../css/chordictionary.min.css"
-import "../css/chordFinder.css"
+import "../css/chordFinder.scss"
 import * as chordictionary from "chordictionary"
 
 class FilterbyFret extends React.Component {

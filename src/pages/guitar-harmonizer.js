@@ -5,9 +5,9 @@ import React from "react"
 import Layout from "../components/layout"
 // import Fretboard from "../components/P5Fretboard"
 // import SwitchesGroup from "../components/switcherButtons"
-import "../css/harmonizerChordStyles.css"
-import "../css/nav.css"
-import "../css/guitarChordFinder.css"
+import "../css/harmonizerChordStyles.scss"
+import "../css/nav.scss"
+import "../css/guitarChordFinder.scss"
 import SEO from "../components/seo"
 import loadable from '@loadable/component'
 const SwitchesGroup = loadable(() => import('../components/switcherButtons'))

@@ -3,7 +3,7 @@ import React from "react"
 // import Nouislider from "nouislider-react"
 // import UkeChordsFinder from "../components/UkeFinder"
 import "nouislider/distribute/nouislider.css"
-import "../css/guitarChordFinder.css"
+import "../css/guitarChordFinder.scss"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import loadable from '@loadable/component'

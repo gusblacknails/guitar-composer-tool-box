@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 
 // import ScaleRender from "../components/ScaleRender"
 import "nouislider/distribute/nouislider.css"
-import "../css/guitarChordFinder.css"
+import "../css/guitarChordFinder.scss"
 import SEO from "../components/seo"
 import loadable from '@loadable/component'
 const ChordFinder = loadable(() => import('../components/ChordFinder'))
