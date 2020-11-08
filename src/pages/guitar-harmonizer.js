@@ -52,6 +52,7 @@ export default class GuitarHarmonizer extends React.Component {
         <SEO title="Guitar Scale Harmonizer" />
         <div className="ChordFinderTitleBox">
           <h1 className="ChordFinderTitle">GUITAR SCALE HARMONIZER</h1>
+          <h2 className="underH1">The chords for the most common scales</h2>
         </div>
         <div className="outerBox" id="out">
           <div className="middleBox" id="middle">
