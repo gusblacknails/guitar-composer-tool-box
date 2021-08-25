@@ -14,6 +14,14 @@ const cfg = {
         publisherId: `ca-pub-5260980741933208`
       },
     },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `chord_scale_combinations`,
+        path: `${__dirname}/src/data/`,
+      },
+    },
     "gatsby-plugin-material-ui",
     `gatsby-plugin-react-helmet`,
     {
@@ -36,7 +44,7 @@ const cfg = {
         display: `minimal-ui`,
         icon: `src/images/guitar.png`, // This path is relative to the root of the site.
       },
-      
+
     },
     {
       resolve: `gatsby-plugin-google-gtag`,

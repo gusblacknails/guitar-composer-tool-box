@@ -11,7 +11,7 @@
     "@material-ui/styles": "^4.5.2",
     "@tombatossals/chords-db": "github:gusblacknails/chords-db#master",
     "@tombatossals/react-chords": "^0.2.10",
-    "@tonaljs/tonal": "^3.2.2",
+    "@tonaljs/tonal": "^4.6.2",
     "bootstrap": "^4.3.1",
     "chordictionary": "0.1.0-beta.4",
     "gatsby": "^2.25.3",
@@ -25,7 +25,8 @@
     "gatsby-plugin-react-helmet": "^3.1.10",
     "gatsby-plugin-sass": "^2.4.2",
     "gatsby-plugin-sharp": "^2.7.1",
-    "gatsby-source-filesystem": "^2.1.29",
+    "gatsby-source-filesystem": "^2.11.1",
+    "gatsby-transformer-json": "^3.11.0",
     "gatsby-transformer-sharp": "^2.2.20",
     "html-to-react": "^1.4.2",
     "node-sass": "^4.14.1",
@@ -40,7 +41,6 @@
     "reactstrap": "^8.0.1",
     "teoria": "^2.5.0",
     "teoria-chord-progression": "^1.0.0",
-    "tonal": "^2.2.2",
     "url-loader": "^2.2.0"
   },
   "devDependencies": {

@@ -12,7 +12,7 @@ export default function SwitchesGroup(props) {
   const handleChange = name => event => {
     setState({ ...state, [name]: event.target.checked })
     props.variationsState(event.target.checked)
-    console.log(event.target.checked, state)
+    console.log( "VARIATIONS:", event.target.checked, state)
   }
 
   return (

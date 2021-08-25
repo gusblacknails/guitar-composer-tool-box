@@ -72,6 +72,7 @@ export default class GuitarHarmonizer extends React.Component {
               <Harmonizer
                 root={this.state.currentRoot}
                 scale={this.state.currentScale}
+                scaleName={this.state.currentScale}
                 variations={this.state.variationState}
               />
             </div>

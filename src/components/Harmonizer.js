@@ -17,7 +17,7 @@ class Harmonizer extends React.Component {
       extraChordsBox: "extraChordsBox2",
     }
   }
-
+  
   // DONT USE SCALES: chromatic, doubleharmonic, harmonicchromatic
   extractRoot(name) {
     let out
@@ -70,7 +70,7 @@ class Harmonizer extends React.Component {
     return out
   }
   extractType(type) {
-    if (type == "") {
+    if (type === "") {
       return "major"
     }
     if (type === "m") {
@@ -81,6 +81,7 @@ class Harmonizer extends React.Component {
   }
 
   harmonizeScale(props) {
+    
     const defaultSetup = {
       strings: 6,
       fretsOnChord: 4,
@@ -160,7 +161,7 @@ class Harmonizer extends React.Component {
     }
 
     let allChordsSeventh
-    if (props.scale != "minorpentatonic" && props.scale != "majorpentatonic") {
+    if (props.scale != "minorpentatonic" && props.scale !== "majorpentatonic") {
       allChordsSeventh = teoriaChordProgression(scaleToHarmonize, chords, 4)
     }
 
@@ -176,7 +177,7 @@ class Harmonizer extends React.Component {
         let type = this.extractType(element.symbol)
         let variationBoxColor
 
-        if (index % 2 == 0 && this.state.extraChordsBox === "extraChordsBox1") {
+        if (index % 2 === 0 && this.state.extraChordsBox === "extraChordsBox1") {
           variationBoxColor = "variation1"
         } else {
           if (this.state.extraChordsBox === "extraChordsBox1") {
@@ -245,7 +246,7 @@ class Harmonizer extends React.Component {
         let type = this.extractType(element.symbol)
         let variationBoxColor
 
-        if (index % 2 == 0 && this.state.extraChordsBox === "extraChordsBox1") {
+        if (index % 2 === 0 && this.state.extraChordsBox === "extraChordsBox1") {
           variationBoxColor = "variation1"
         } else {
           if (this.state.extraChordsBox === "extraChordsBox1") {
@@ -255,9 +256,7 @@ class Harmonizer extends React.Component {
         chord = guitar.chords[`${root}`].find(
           chord => chord.suffix === `${type}`
         )
-        // console.log("chord:", chord)
-        // console.log("allChords:", allChords)
-        // console.log("in seventh chord:", root, type, chord)
+        
         renderChordsSeventh.push(
           <div className="harmonizerChordbox">
             <div className="chordTitleBox">
@@ -345,7 +344,7 @@ class Harmonizer extends React.Component {
         <div>
           <div className="">
             <h2 className="titles" id="chordByFred">
-              {this.props.root} {this.props.scale} scale diatonic chords
+              {this.props.root} {this.props.scaleName} scale diatonic chords
             </h2>
             <div className="harmonizerChordsBox">
               <div className="harmonizerChordsBox">
@@ -356,7 +355,7 @@ class Harmonizer extends React.Component {
           {this.state.seventhChords.length > 0 && (
             <div className="">
               <h2 className="titles" id="chordByFred">
-                {this.props.root} {this.props.scale} scale seventh chords
+                {this.props.root} {this.props.scaleName} scale seventh chords
               </h2>
               <div className="harmonizerChordsBox">
                 <div className="harmonizerChordsBox">

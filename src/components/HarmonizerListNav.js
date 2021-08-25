@@ -1,4 +1,6 @@
 import React from "react"
+import { navigate } from "gatsby"
+import { Link } from "gatsby"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
 import TextField from "@material-ui/core/TextField"
@@ -67,12 +69,12 @@ const scaleNames = [
   "lydian",
   "mixolydian",
   "aeolian",
-  "harmonicminor",
+  "harmonic minor",
   "locrian",
-  "majorpentatonic",
-  "melodicminor",
-  "minorpentatonic",
-  "wholetone",
+  "major pentatonic",
+  "melodic minor",
+  "minor pentatonic",
+  "whole tone",
 ]
 const useStyles = makeStyles(theme => ({
   root: {
@@ -97,6 +99,8 @@ export default function ScaleList(props) {
   const [values, setValues] = React.useState({
     notes: "C",
     scale: "Major",
+    scaleName: "Major"
+
   })
 
   const handleChange = prop => event => {
@@ -104,10 +108,54 @@ export default function ScaleList(props) {
   }
 
   let inputScale = [values.notes, values.scale]
-  const sendData = () => {
-    props.currentScale(inputScale)
+ 
+  function slugify(string) {
+    return string
+      .toString()
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w\-]+/g, "")
+      .replace(/\-\-+/g, "-")
+      .replace(/^-+/, "")
+      .replace(/-+$/, "");
   }
+  let ls = window.location.href.split( "/" );
+    
+  var filteredArray = ls.filter(function (el) {
+    return el != "";
+  });
+  let lastElementFromDomain = filteredArray[filteredArray.length - 1]
+  const sendData = () => {
+    
+    
+    
+    if(lastElementFromDomain!=="guitar-harmonizer" ){
+      props.currentScale(inputScale)
+    }else{
+      
+      console.log("GIUTAR HARMONIZER" , slugifiedLink)
+      // navigate(`/guitar-harmonizer/${slugifiedLink}`)
+    }
+    
+  }
+  let noteName 
+  
+  if(values.notes.slice(-1)==="#"){
+    noteName = `${values.notes.slice(0)} sharp`
+  }else{
+    noteName=values.notes
+  }
+  let slugifiedLink = slugify(noteName + " " + values.scale)
+  const StaticPageLink = () => {
+    if(lastElementFromDomain!=="guitar-harmonizer" ){
+      return "Harmonize Scale"
+    }else{
+      return <Link id="sendToStaticLinkButton" href={"/guitar-harmonizer/" + slugifiedLink}>Harmonize Scale</Link>
+    }
 
+    }
+  
   return (
     <div className="harmonizerSelectorBox">
       <div className="harmonizerSelectorSubBox">
@@ -157,7 +205,7 @@ export default function ScaleList(props) {
               className={classes.button}
               onClick={sendData}
             >
-              Harmonize Scale
+              <StaticPageLink/>
             </Button>
           </div>
         </form>
