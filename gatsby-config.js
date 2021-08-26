@@ -9,10 +9,7 @@ const cfg = {
     siteUrl: `https://www.guitarcomposerstoolbox.com`,
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-sitemap",
-
-    }, 
+     
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-adsense`,
@@ -20,6 +17,7 @@ const cfg = {
         publisherId: `ca-pub-5260980741933208`
       },
     },
+    'gatsby-plugin-sitemap',
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -28,6 +26,7 @@ const cfg = {
         path: `${__dirname}/src/data/`,
       },
     },
+
     "gatsby-plugin-material-ui",
     `gatsby-plugin-react-helmet`,
     {
