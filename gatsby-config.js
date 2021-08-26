@@ -9,7 +9,7 @@ const cfg = {
     siteUrl: `https://www.guitarcomposerstoolbox.com`,
   },
   plugins: [
-     
+     'gatsby-plugin-robots-txt',
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-adsense`,
