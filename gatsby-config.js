@@ -1,12 +1,14 @@
 
 const cfg = {
   siteMetadata: {
+    siteUrl: `https://www.guitarcomposerstoolbox.com`,
     title: `Guitar Composers ToolBox`,
     // description: `Find the next chord or scale that will improve your song`,
     description: `Tools for guitar and ukulele composers such as chords finders or scale harmonizer`,
     author: `https://github.com/gusblacknails`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-adsense`,
@@ -46,6 +48,7 @@ const cfg = {
       },
 
     },
+    
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
