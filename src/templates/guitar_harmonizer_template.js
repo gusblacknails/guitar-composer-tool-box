@@ -148,9 +148,7 @@ export default ({ data }) => {
                 description={"All the guitar chords to play in the " + info.root_note + " " + info.scale_name +  " wich has these degress," + info.degrees  + ", and these intervals, " + info.intervals + " The chords of the " + info.root_note + " " + info.scale_name + "scale, are:" + chords }
 
             />
-            <div>
-                <h1>{pageInfoBlock}</h1>
-             </div>
+       
             <div className="ChordFinderTitleBox">
                 <h1 className="ChordFinderTitle">{rootNote + " " + scaleName + " chords"}</h1>
                 <h2 className="underH1">{"All the guitar chords to play with the " + rootNote + " " + scaleName +  " scale"}</h2>

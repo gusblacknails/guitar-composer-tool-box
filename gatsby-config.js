@@ -1,14 +1,18 @@
+const siteUrl = process.env.URL || `https://giutarcomposerstoolbox.com`
 
 const cfg = {
   siteMetadata: {
-    siteUrl: `https://www.guitarcomposerstoolbox.com`,
+    
     title: `Guitar Composers ToolBox`,
-    // description: `Find the next chord or scale that will improve your song`,
     description: `Tools for guitar and ukulele composers such as chords finders or scale harmonizer`,
     author: `https://github.com/gusblacknails`,
+    siteUrl: `https://www.guitarcomposerstoolbox.com`,
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-sitemap",
+
+    }, 
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-adsense`,
@@ -76,11 +80,9 @@ const cfg = {
         },
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    
   ],
-  /* the rest of your config */
+
 }
 if (process.env.CONTEXT === "production") {
   const googleAnalyticsCfg = {
@@ -92,3 +94,5 @@ if (process.env.CONTEXT === "production") {
   cfg.plugins.push(googleAnalyticsCfg)
 }
 module.exports = cfg
+
+

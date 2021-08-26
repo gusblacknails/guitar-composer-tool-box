@@ -16,6 +16,7 @@ import {
 } from "reactstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import './css/navBar.scss'
+import logo from "./images/logo_shadow.png"
 
 const NavBar = props => {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,7 +28,7 @@ const NavBar = props => {
       <Navbar  expand="md">
         <NavbarBrand href="/" className="logo">
           {/* <h1 className="mainTitle">The Guitar Composers ToolBox</h1> */}
-          <img src={require("./images/logo_shadow.png")} alt="logo site" className="logo" />
+          <img src={logo} alt="logo site" className="logo" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
