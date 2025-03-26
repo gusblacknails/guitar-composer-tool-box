@@ -31,7 +31,7 @@
     "gatsby-transformer-json": "^3.11.0",
     "gatsby-transformer-sharp": "^2.2.20",
     "html-to-react": "^1.4.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nouislider-react": "^3.3.4",
     "postcss": "^8.3.6",
     "prop-types": "^15.7.2",
