@@ -15,11 +15,30 @@ html {
 .mainBox {
   /* margin: 1em; */
 }
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0.5rem;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background: $base-color;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  transition: top 0.15s ease;
+  &:focus {
+    top: 0;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+}
+
 .layoutBox {
   margin: 0 auto;
   background-color: $background;
   // background-image: url("../images/dark-wall.png");
   min-height: 92em;
+  position: relative;
 }
 
 .bg-light {
@@ -89,6 +108,12 @@ a {
 a:active,
 a:hover {
   outline-width: 0;
+}
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid $base-color;
+  outline-offset: 2px;
 }
 abbr[title] {
   border-bottom: none;

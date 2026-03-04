@@ -55,8 +55,8 @@ class UkeChordsFinder extends React.Component {
             ></div>
           )
         }
-      } catch (e) {
-        console.log("ERROR", e)
+      } catch (_e) {
+        // chord render failed
       }
     })
     this.setState({ chords: filteredChords })
@@ -65,8 +65,8 @@ class UkeChordsFinder extends React.Component {
     let lastThree
     try {
       lastThree = data.substr(data.length - 3)
-    } catch (e) {
-      console.log(e)
+    } catch (_e) {
+      // suffix parse failed
     }
     if (lastThree === "Maj") {
       let newStr = data.substring(0, data.length - 3)
@@ -86,7 +86,7 @@ class UkeChordsFinder extends React.Component {
           <span className="enharmonic">
             * Some chords may have a different name than the selected one but
             the same exact notes. This is what is called
-            <a href="https://en.wikipedia.org/wiki/Enharmonic">
+            <a href="https://en.wikipedia.org/wiki/Enharmonic" rel="noopener noreferrer" target="_blank">
               {" "}
               Enharmonic chords
             </a>

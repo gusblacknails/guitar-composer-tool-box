@@ -41,7 +41,6 @@ class FilterbyFret extends React.Component {
     )
     let filteredChords = []
     let chordFind = instrument.getChordsList(props.chord)
-    console.log("CHORD_FILTERED:", chordFind)
 
     chordFind.chordList.forEach(chord => {
       let chordInfo = instrument.getChordInfo(chord.tab.join(""))
@@ -74,8 +73,8 @@ class FilterbyFret extends React.Component {
             ></div>
           )
         }
-      } catch (e) {
-        console.log("ERROR", e)
+      } catch (_e) {
+        // skip chord that failed to render
       }
     })
     // console.log("filteredChords", filteredChords)
@@ -93,7 +92,7 @@ class FilterbyFret extends React.Component {
           <span className="enharmonic">
             * Some chords may have different name than the selected one but the
             same exact notes. This is what is called
-            <a href="https://en.wikipedia.org/wiki/Enharmonic">
+            <a href="https://en.wikipedia.org/wiki/Enharmonic" rel="noopener noreferrer" target="_blank">
               {" "}
               Enharmonic chords
             </a>

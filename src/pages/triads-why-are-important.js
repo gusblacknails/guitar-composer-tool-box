@@ -7,7 +7,10 @@ import "../css/article.scss"
 const SecondPage = () => (
   <React.Fragment>
     <Layout>
-      <SEO title="Triads, why are they so important?" />
+      <SEO
+        title="Triads, why are they so important?"
+        description="Why triads matter for guitar: play less but better in two-guitar bands and with keyboards. Practical tips for composers."
+      />
       <div className="articleBox">
         <h1>Triads, why are they so important?</h1>
         <p>

@@ -1,13 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Link } from "gatsby"
-// import Card from "@material-ui/core/Card"
-// import CardHeader from "@material-ui/core/CardHeader"
-// import CardMedia from "@material-ui/core/CardMedia"
-// import CardContent from "@material-ui/core/CardContent"
-// import CardActionArea from "@material-ui/core/CardActions"
-// import chordFinderThumb from "../images/chordFinderThumb.jpg"
-// import Typography from "@material-ui/core/Typography"
 import { red } from "@material-ui/core/colors"
 import loadable from '@loadable/component'
 
@@ -68,7 +61,7 @@ export default function Home() {
               subheader="Find the best chord for your needs"
             />
 
-            <div id="chordFinderThumb" title="Guitar Chords Finder Thumb"></div>
+            <div id="chordFinderThumb" title="Guitar Chords Finder Thumb" aria-hidden="true" />
             <CardContent>
               <Typography
                 variant="body2"
@@ -94,7 +87,7 @@ export default function Home() {
               title="Ukulele Chords Finder"
               subheader="Which chord fits better with the last one?"
             />
-            <div id="ukeFinderThumb" title="Ukulele Chords Finder Thumb"></div>
+            <div id="ukeFinderThumb" title="Ukulele Chords Finder Thumb" aria-hidden="true" />
             <CardContent>
               <Typography
                 variant="body2"
@@ -117,12 +110,9 @@ export default function Home() {
           <Card className={classes.card}>
             <CardHeader
               title="Guitar Scale Harmonizer"
-              subheader="Diatonic chords for the choosen scale"
+              subheader="Diatonic chords for the chosen scale"
             />
-            <div
-              id="guitarScaleHarmonizeThumb"
-              title="Guitar Scale Harmonizer Thumb"
-            ></div>
+            <div id="guitarScaleHarmonizeThumb" title="Guitar Scale Harmonizer Thumb" aria-hidden="true" />
             <CardContent>
               <Typography variant="body2" color="textSecondary" component="p">
                 There are <b>many different scales</b>, major, minor, blues,
@@ -169,7 +159,7 @@ export default function Home() {
             <CardActionArea>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  What aims to be this site?
+                  What is this site about?
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                   The Guitar Composers Toolbox aims to be a site where composers

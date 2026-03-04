@@ -6,7 +6,10 @@ import SEO from "../components/seo"
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Privacy Policy" />
+    <SEO
+      title="Privacy Policy"
+      description="Privacy policy for Guitar Composers Toolbox (www.guitarcomposerstoolbox.com). How we collect and use information."
+    />
     
     <div>
 

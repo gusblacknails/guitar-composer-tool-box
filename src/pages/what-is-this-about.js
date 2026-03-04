@@ -6,7 +6,10 @@ import "../css/what-is-this-about.scss"
 const whatIsThisAbout = () => (
   <React.Fragment>
     <Layout>
-      <SEO title="What is tihs abput?" />
+      <SEO
+        title="What is this about?"
+        description="Guitar Composers Toolbox: interactive guitar and ukulele tools for composers—chord finder, scale harmonizer, and composition tips."
+      />
       <div className="homeBox">
         <div className="textContent">
           <p>

@@ -28,66 +28,68 @@ const NavBar = props => {
       <Navbar  expand="md">
         <NavbarBrand href="/" className="logo">
           {/* <h1 className="mainTitle">The Guitar Composers ToolBox</h1> */}
-          <img src={logo} alt="logo site" className="logo" />
+          <img src={logo} alt="Guitar Composers Toolbox – home" className="logo" />
         </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+        <NavbarToggler onClick={toggle} aria-label="Abrir o cerrar menú de navegación" />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/guitar-harmonizer/">Scale Harmonizer</NavLink>
+              <NavLink href="/guitar-harmonizer">Scale Harmonizer</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+              <DropdownToggle nav caret id="dropdown-chords" aria-haspopup="true">
                 Chords Finder
               </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  {" "}
+              <DropdownMenu right aria-labelledby="dropdown-chords" role="menu">
+                <DropdownItem tag="div" role="none">
                   <Link
                     style={{ fontFamily: "sans-serif", color: "black" }}
-                    to="/guitar-chord-finder/"
+                    to="/guitar-chord-finder"
+                    role="menuitem"
                   >
                     Guitar Chords Finder
                   </Link>
                 </DropdownItem>
-                <DropdownItem>
-                  {" "}
+                <DropdownItem tag="div" role="none">
                   <Link
                     style={{ fontFamily: "sans-serif", color: "black" }}
-                    to="/ukulele-chord-finder/"
+                    to="/ukulele-chord-finder"
+                    role="menuitem"
                   >
-                    Ukelele Chords Finder
+                    Ukulele Chords Finder
                   </Link>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+              <DropdownToggle nav caret id="dropdown-articles" aria-haspopup="true">
                 Articles
               </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  {" "}
+              <DropdownMenu right aria-labelledby="dropdown-articles" role="menu">
+                <DropdownItem tag="div" role="none">
                   <Link
                     style={{ fontFamily: "sans-serif", color: "black" }}
-                    to="/triads-why-are-important/"
+                    to="/triads-why-are-important"
+                    role="menuitem"
                   >
                     Triads, why are they so important?
                   </Link>
                 </DropdownItem>
-                <DropdownItem>
+                <DropdownItem tag="div" role="none">
                   <Link
                     style={{ fontFamily: "sans-serif", color: "black" }}
-                    to="/what-is-this-about/"
+                    to="/what-is-this-about"
+                    role="menuitem"
                   >
-                    What aims to be this site?
+                    What is this site about?
                   </Link>
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem>
+                <DropdownItem tag="div" role="none">
                   <Link
                     style={{ fontFamily: "sans-serif", color: "black" }}
-                    to="/privacyPolicy/"
+                    to="/privacyPolicy"
+                    role="menuitem"
                   >
                     Privacy Policy
                   </Link>
@@ -95,13 +97,15 @@ const NavBar = props => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
+              <DropdownToggle nav caret id="dropdown-sites" aria-haspopup="true">
                 Interesting Sites
               </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem href="https://beat-it-music-machine.herokuapp.com/">
+              <DropdownMenu right aria-labelledby="dropdown-sites" role="menu">
+                <DropdownItem tag="div" role="none">
+                  <a href="https://beat-it-music-machine.herokuapp.com/" target="_blank" rel="noopener noreferrer" role="menuitem" style={{ fontFamily: "sans-serif", color: "black" }}>
                   {" "}
                   Beat it! Music Machine
+                  </a>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

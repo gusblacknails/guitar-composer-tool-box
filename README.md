@@ -20,6 +20,17 @@
 - **Teoria-Chord-Progression**: To generate and visualize chord progressions clearly and effectively.
 - **Chordictionary**: For accurate chord generation and visualization.
 
+## Despliegue (Netlify)
+
+El sitio se despliega en **Netlify** conectando este repositorio de GitHub:
+
+1. Entra en [app.netlify.com](https://app.netlify.com) e inicia sesión.
+2. **Add new site** → **Import an existing project** → **GitHub** y elige el repo de este proyecto.
+3. Netlify detecta Gatsby y usa por defecto `npm run build` y carpeta `public`. Si existe `netlify.toml` en el repo, se usan sus valores (comando, `URL` para sitemap/SEO, etc.).
+4. Cada **push a la rama principal** (p. ej. `main`) genera un deploy automático.
+
+Dominio: [www.guitarcomposerstoolbox.com](https://www.guitarcomposerstoolbox.com). Las redirecciones (trailing slash, www) y la variable `URL` están en `netlify.toml` y en `static/_redirects`.
+
 ## Contributing
 
 Contributions are welcome! If you have suggestions for new features or improvements, please open an issue or submit a pull request.

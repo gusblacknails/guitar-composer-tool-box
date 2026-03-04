@@ -32,8 +32,12 @@ class ChordsFinder extends React.Component {
     try {
       chordFind = instrument.getChordsList(props.chord)
       // console.log("CHORD:", chordFind)
-    } catch (e) {
-      console.log("ERROR:", e)
+    } catch (_e) {
+      // chord lookup failed
+    }
+    if (!chordFind || !chordFind.chordList) {
+      this.setState({ basic: [], barre: [] })
+      return
     }
     let foundBasicChords = []
     chordFind.chordList.forEach(chord => {
@@ -124,13 +128,13 @@ class ChordsFinder extends React.Component {
     return (
       <div className="chordsBox">
         {this.state.basic.length > 0 && (
-          <div class={this.chordToggleClass()}>
-            <h2 class="titles">Basic Chords</h2>
+          <div className={this.chordToggleClass()}>
+            <h2 className="titles">Basic Chords</h2>
             <div className="chordFlex">{this.state.basic}</div>
           </div>
         )}
         {this.state.barre.length > 0 && (
-          <div class={this.chordToggleClassBarre()}>
+          <div className={this.chordToggleClassBarre()}>
             <h2 className="titles">Barre Chords</h2>
             <div className="chordFlex">{this.state.barre}</div>
           </div>

@@ -35,21 +35,16 @@ export default class GuitarHarmonizer extends React.Component {
     }
   }
   callbackVariationState = childData => {
-    console.log("CHILD_DATA:", childData)
-
-    this.setState({
-      variationState: childData,
-    })
-    // this.setState(prevState => ({
-    //   variationState: !prevState.variationState,
-    // }))
-    console.log("SWITH_STATE:", this.state.variationState)
+    this.setState({ variationState: childData })
   }
 
   render() {
     return (
       <Layout>
-        <SEO title="Guitar Scale Harmonizer" />
+        <SEO
+          title="Guitar Scale Harmonizer"
+          description="Find the chords for the most common scales. Guitar scale harmonizer with triads, seventh chords and variations for every root and scale (major, minor, modes)."
+        />
         <div className="ChordFinderTitleBox">
           <h1 className="ChordFinderTitle">GUITAR SCALE HARMONIZER</h1>
           <h2 className="underH1">The chords for the most common scales</h2>

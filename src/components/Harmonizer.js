@@ -100,8 +100,8 @@ class Harmonizer extends React.Component {
     let scale_root
     try {
       scale_root = this.extractRoot(props.root)
-    } catch (e) {
-      console.log("scale_root_error:", e)
+    } catch (_e) {
+      // invalid root
     }
 
     if (scale_root === "Csharp") {
@@ -156,8 +156,8 @@ class Harmonizer extends React.Component {
 
     try {
       allChords = teoriaChordProgression(scaleToHarmonize, chords)
-    } catch (e) {
-      console.log("ERROR_teoriaChordProgression:", e)
+    } catch (_e) {
+      // scale harmonization failed
     }
 
     let allChordsSeventh
@@ -354,7 +354,7 @@ class Harmonizer extends React.Component {
           </div>
           {this.state.seventhChords.length > 0 && (
             <div className="">
-              <h2 className="titles" id="chordByFred">
+              <h2 className="titles" id="chordByFretSeventh">
                 {this.props.root} {this.props.scaleName} scale seventh chords
               </h2>
               <div className="harmonizerChordsBox">

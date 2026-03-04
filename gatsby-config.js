@@ -1,22 +1,24 @@
-const siteUrl = process.env.URL || `https://giutarcomposerstoolbox.com`
+// URL canónica (con www). En producción definir URL=https://www.guitarcomposerstoolbox.com
+// para sitemap, robots.txt y canonicals y evitar "Page with redirect" en Search Console.
+const siteUrl = process.env.URL || `https://www.guitarcomposerstoolbox.com`
 
 const cfg = {
   siteMetadata: {
-    
     title: `Guitar Composers ToolBox`,
-    description: `Tools for guitar and ukulele composers such as chords finders or scale harmonizer`,
+    description: `Tools for guitar and ukulele composers: chord finders and scale harmonizer. Free guitar chords chart, ukulele chord finder, and scale harmonizer for composers.`,
     author: `https://github.com/gusblacknails`,
-    siteUrl: `https://www.guitarcomposerstoolbox.com`,
+    siteUrl,
   },
   plugins: [
-     'gatsby-plugin-robots-txt',
-    `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-google-adsense`,
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
-        publisherId: `ca-pub-5260980741933208`
+        host: siteUrl,
+        sitemap: `${siteUrl}/sitemap-index.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    `gatsby-plugin-sass`,
     'gatsby-plugin-sitemap',
     `gatsby-transformer-json`,
     {
@@ -50,35 +52,7 @@ const cfg = {
         icon: `src/images/guitar.png`, // This path is relative to the root of the site.
       },
 
-    },
-    
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          "GA-TRACKING_ID", // Google Analytics / GA
-          // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-          // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
-        ],
-        // This object gets passed directly to the gtag config command
-        // This config will be shared across all trackingIds
-        gtagConfig: {
-          optimize_id: "OPT_CONTAINER_ID",
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
-        // This object is used for configuration specific to this plugin
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: false,
-          // Setting this parameter is also optional
-          respectDNT: true,
-          // Avoids sending pageview hits from custom paths
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
-        },
-      },
-    },
+    }
     
   ],
 

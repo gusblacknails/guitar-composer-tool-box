@@ -24,8 +24,11 @@ const Layout = ({ children }) => {
 
   return (
     <div className="layoutBox">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <NavBar />
-      <main className="mainBox">{children}</main>
+      <main id="main-content" className="mainBox" tabIndex={-1}>{children}</main>
     </div>
   )
 }

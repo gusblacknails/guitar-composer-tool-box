@@ -45,7 +45,10 @@ export default class GuitarChordFinder extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title="Guitar Chord Finder" />
+        <SEO
+          title="Guitar Chord Finder"
+          description="Free guitar chord finder: every position on the neck for any chord type. Filter by frets, explore CAGED shapes and chord variations for composition."
+        />
        
         <div
           className="ChordFinderTitleBox"

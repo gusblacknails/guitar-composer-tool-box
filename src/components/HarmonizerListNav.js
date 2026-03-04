@@ -130,12 +130,8 @@ export default function ScaleList(props) {
     
     
     
-    if(lastElementFromDomain!=="guitar-harmonizer" ){
+    if (lastElementFromDomain !== "guitar-harmonizer") {
       props.currentScale(inputScale)
-    }else{
-      
-      console.log("GIUTAR HARMONIZER" , slugifiedLink)
-      // navigate(`/guitar-harmonizer/${slugifiedLink}`)
     }
     
   }
@@ -151,7 +147,7 @@ export default function ScaleList(props) {
     if(lastElementFromDomain!=="guitar-harmonizer" ){
       return "Harmonize Scale"
     }else{
-      return <Link id="sendToStaticLinkButton" href={"/guitar-harmonizer/" + slugifiedLink}>Harmonize Scale</Link>
+      return <Link id="sendToStaticLinkButton" to={"/guitar-harmonizer/" + slugifiedLink}>Harmonize Scale</Link>
     }
 
     }

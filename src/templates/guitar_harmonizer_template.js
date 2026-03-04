@@ -145,7 +145,7 @@ export default ({ data }) => {
         <Layout>
             <SEO
                 title={info.root_note + " " + info.scale_name + " Chords"}
-                description={"All the guitar chords to play in the " + info.root_note + " " + info.scale_name +  " wich has these degress," + info.degrees  + ", and these intervals, " + info.intervals + " The chords of the " + info.root_note + " " + info.scale_name + "scale, are:" + chords }
+                description={"Chords for the " + info.root_note + " " + info.scale_name + " scale: degrees " + info.degrees + ", intervals " + info.intervals + ". Chord list: " + chords}
 
             />
        

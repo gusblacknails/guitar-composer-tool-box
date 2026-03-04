@@ -25,7 +25,6 @@ export default class ScaleRender extends React.Component {
       jazz_minor: [2, 1, 2, 2, 2, 2, 1],
     }
     const canvas = this.myRef.current
-    console.log(Fretboard)
     const fretboard = new Fretboard(canvas, 24)
     fretboard.drawScale(scale.major, 2, 6, 15)
   }

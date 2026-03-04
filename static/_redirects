@@ -1,0 +1,3 @@
+# Redirigir URLs con barra final a la forma canónica (sin barra) para evitar duplicados en indexación.
+# Netlify: /*/ hace match a cualquier path que termina en /; :splat es el segmento antes de esa barra.
+/*/  /:splat  301

@@ -33,10 +33,12 @@ export default class GuitarChordFinder extends React.Component {
   }
 
   render() {
-    console.log("STATE:", this.state)
     return (
       <Layout>
-        <SEO title="Ukulele Chord Finder" />
+        <SEO
+          title="Ukulele Chord Finder"
+          description="Free ukulele chord finder: all positions and chord types. Filter by frets and find the best voicing for your arrangements."
+        />
         <div
           className="UkeChordFinderTitleBox"
           title="Ukulele Chords Finder title background"

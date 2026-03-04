@@ -1,0 +1,5 @@
+# Despliegue en Netlify: conectas el repo de GitHub en app.netlify.com y cada push despliega.
+[build]
+  command   = "npm run build"
+  publish   = "public"
+  environment = { NODE_VERSION = "14", URL = "https://www.guitarcomposerstoolbox.com" }
